@@ -26,6 +26,7 @@ from app.forms import (
     ResetPasswordForm,
     UpdateAccountForm,
     ChangePasswordForm,
+    DeleteAccountForm,
 )
 from app.models import User, Post
 import os
@@ -476,14 +477,83 @@ def profil():
         days_left=days_left,
     )
 
+@app.route('/delete_account', methods=['GET', 'POST'])
+@login_required
+def delete_account():
+    form = DeleteAccountForm()
+    
+    if request.method == 'GET':
+        # Generowanie i wysyłka kodu
+        code = str(secrets.randbelow(1000000)).zfill(6)
+        session['delete_code'] = code
+        session['delete_code_timestamp'] = datetime.utcnow().timestamp()
+        
+        html = render_template("email/delete_account_code.html", code=code)
+        send_email(
+            "Kod potwierdzający usunięcie konta",
+            [current_user.email],
+            f"Twój kod potwierdzający to: {code}",
+            html
+        )
+        flash(_("Wysłaliśmy kod potwierdzający na Twój adres e-mail. Kod jest ważny przez 10 minut."), "info")
+
+    if form.validate_on_submit():
+        # Sprawdzenie, czy kod nie wygasł (10 minut)
+        if 'delete_code_timestamp' not in session or \
+           datetime.utcnow().timestamp() - session['delete_code_timestamp'] > 600:
+            flash(_("Kod potwierdzający wygasł. Poproś o nowy."), "danger")
+            session.pop('delete_code', None)
+            session.pop('delete_code_timestamp', None)
+            return redirect(url_for('delete_account'))
+
+        # Sprawdzenie hasła i kodu
+        if check_password_hash(current_user.password_hash, form.password.data) and \
+           session.get('delete_code') == form.confirmation_code.data:
+            
+            user_to_delete = User.query.get(current_user.id)
+            
+            logout_user()
+            
+            Post.query.filter_by(author=user_to_delete).delete()
+            TournamentRegistration.query.filter_by(player=user_to_delete).delete()
+            TournamentWinner.query.filter_by(user_id=user_to_delete.id).delete()
+
+            db.session.delete(user_to_delete)
+            db.session.commit()
+            
+            flash(_("Twoje konto zostało trwale usunięte."), "success")
+            return redirect(url_for('index'))
+        else:
+            flash(_("Nieprawidłowe hasło lub kod potwierdzający."), "danger")
+    
+    return render_template('delete_account.html', title=_("Usuń Konto"), form=form)
+
+
 @app.route("/tournaments")
 def tournaments():
     page = request.args.get("page", 1, type=int)
-    all_tournaments = Tournament.query.order_by(Tournament.start_date.desc()).paginate(
-        page=page, per_page=app.config["POSTS_PER_PAGE"]
+    today = datetime.utcnow().date()
+
+    # ZMIANA: Pobieramy wszystkie nadchodzące turnieje do jednej, wspólnej listy.
+    upcoming_tournaments = (
+        Tournament.query.filter(Tournament.start_date >= today)
+        .order_by(Tournament.start_date.asc())
+        .all()
     )
+
+    # Przeszłe turnieje z paginacją (bez zmian)
+    past_tournaments = (
+        Tournament.query.filter(Tournament.start_date < today)
+        .order_by(Tournament.start_date.desc())
+        .paginate(page=page, per_page=app.config["POSTS_PER_PAGE"])
+    )
+
     return render_template(
-        "tournaments.html", title=_("Turnieje"), tournaments=all_tournaments
+        "tournaments.html",
+        title=_("Turnieje"),
+        upcoming_tournaments=upcoming_tournaments,
+        past_tournaments=past_tournaments,
+        asc=asc,
     )
 
 

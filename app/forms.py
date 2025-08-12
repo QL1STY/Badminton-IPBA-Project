@@ -80,6 +80,13 @@ def validate_password_strength(form, field):
 
 # --- Form Classes ---
 
+class DeleteAccountForm(FlaskForm):
+    password = PasswordField(_l("Hasło"), validators=[DataRequired()])
+    confirmation_code = StringField(
+        _l("Kod potwierdzający"),
+        validators=[DataRequired(), Length(min=6, max=6)]
+    )
+    submit = SubmitField(_l("Usuń konto na stałe"))
 
 class AddWinnerForm(FlaskForm):
     """Formularz do dodawania zwycięzcy do turnieju."""

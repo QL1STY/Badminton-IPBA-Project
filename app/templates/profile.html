@@ -3,7 +3,6 @@
 {% block content %}
 <div class="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
-        <!-- User Info Card -->
         <div class="md:col-span-1">
             <div class="rounded-lg bg-white p-6 text-center shadow-lg">
                 <div class="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-gray-200 text-gray-500">
@@ -15,9 +14,7 @@
             </div>
         </div>
 
-        <!-- Forms Card -->
         <div class="space-y-10 md:col-span-2">
-            <!-- Update Details Form -->
             <div class="rounded-lg bg-white p-8 shadow-lg">
                 <form method="POST" action="">
                     {{ update_form.hidden_tag() }}
@@ -51,7 +48,6 @@
                 </form>
             </div>
 
-            <!-- Change Password Form -->
             <div class="rounded-lg bg-white p-8 shadow-lg">
                 <form method="POST" action="">
                     {{ password_form.hidden_tag() }}
@@ -75,7 +71,42 @@
                     </div>
                 </form>
             </div>
+            
+            <div class="rounded-lg border-2 border-red-500 bg-white p-8 shadow-lg">
+                <h3 class="text-2xl font-bold text-red-700">{{ _('Strefa Zagrożenia') }}</h3>
+                <div class="mt-6">
+                    <p class="text-sm text-gray-700">{{ _('Usunięcie konta jest operacją permanentną i nieodwracalną. Wszystkie Twoje dane zostaną usunięte z serwisu.') }}</p>
+                    <div class="mt-6">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#deleteAccountModal" class="w-full justify-center rounded-md border border-transparent bg-red-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
+                            {{ _('Usuń Moje Konto') }}
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="deleteAccountModal" tabindex="-1" aria-labelledby="deleteAccountModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-lg font-medium text-gray-900" id="deleteAccountModalLabel">{{ _('Potwierdź chęć usunięcia konta') }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>{{ _('Czy na pewno chcesz rozpocząć proces usuwania konta? Zostaniesz przekierowany na stronę, gdzie będziesz musiał(a) potwierdzić operację hasłem oraz kodem wysłanym na e-mail.') }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ _('Anuluj') }}</button>
+        <a href="{{ url_for('delete_account') }}" class="btn btn-danger">{{ _('Tak, chcę usunąć konto') }}</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() if super }}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 {% endblock %}

@@ -12,19 +12,21 @@ from profanity_check import predict
 from app.models import User
 from flask_wtf.file import FileField, FileAllowed
 from flask_login import current_user
+import bleach
 
-# --- Custom Validators ---
+# --- Helper Functions ---
+
+def bleach_clean_text(data):
+    if data is None:
+        return None
+    allowed_tags = ['br', 'p', 'b', 'i', 'u', 'strong', 'em', 'a', 'ul', 'ol', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']
+    return bleach.clean(data, tags=allowed_tags, strip=True)
 
 def get_users():
     """Funkcja pomocnicza do pobierania użytkowników do formularza."""
     return User.query
 
-class AddWinnerForm(FlaskForm):
-    """Formularz do dodawania zwycięzcy do turnieju."""
-    placing = IntegerField(_l('Miejsce'), validators=[DataRequired()])
-    # Używamy QuerySelectField, aby stworzyć listę rozwijaną z użytkownikami
-    user = QuerySelectField(_l('Użytkownik'), query_factory=get_users, get_label='username', allow_blank=False)
-    submit = SubmitField(_l('Dodaj zwycięzcę'))
+# --- Validators ---
 
 def validate_username_profanity(form, field):
     username_text = field.data.lower()
@@ -47,17 +49,27 @@ def validate_password_strength(form, field):
 
 # --- Form Classes ---
 
+class AddWinnerForm(FlaskForm):
+    """Formularz do dodawania zwycięzcy do turnieju."""
+    placing = IntegerField(_l('Miejsce'), validators=[DataRequired()])
+    # Używamy QuerySelectField, aby stworzyć listę rozwijaną z użytkownikami
+    user = QuerySelectField(_l('Użytkownik'), query_factory=get_users, get_label='username', allow_blank=False)
+    submit = SubmitField(_l('Dodaj zwycięzcę'))
+    
 class RegistrationForm(FlaskForm):
-    first_name = StringField(_l('Imię'), validators=[DataRequired(), Length(min=2, max=30)])
-    last_name = StringField(_l('Nazwisko'), validators=[DataRequired(), Length(min=2, max=30)])
+    first_name = StringField(_l('Imię'), filters=[bleach_clean_text], validators=[DataRequired(), Length(min=2, max=30)])
+    last_name = StringField(_l('Nazwisko'), filters=[bleach_clean_text], validators=[DataRequired(), Length(min=2, max=30)])
     username = StringField(_l('Nazwa użytkownika'),
+                           filters=[bleach_clean_text],
                            validators=[DataRequired(), Length(min=2, max=20), validate_username_profanity])
     email = StringField(_l('Email'),
+                        filters=[bleach_clean_text],
                         validators=[DataRequired(), Email(message=_l("Niepoprawny format adresu email."))])
     password = PasswordField(_l('Hasło'), validators=[DataRequired(), validate_password_strength])
     confirm_password = PasswordField(_l('Potwierdź hasło'),
-                                     validators=[DataRequired(), EqualTo('password', message=_l('Hasła muszą być identyczne.'))])
+                                     validators=[DataRequired(), EqualTo('password', message=_l('Hasła muszą być identyczne.') )])
     submit = SubmitField(_l('Zarejestruj się'))
+    
 
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
@@ -77,16 +89,16 @@ class LoginForm(FlaskForm):
     submit = SubmitField(_l('Zaloguj się'))
 
 class PostForm(FlaskForm):
-    title = StringField(_l('Tytuł'), validators=[DataRequired()])
-    content = TextAreaField(_l('Treść'), validators=[DataRequired()])
+    title = StringField(_l('Tytuł'), filters=[bleach_clean_text], validators=[DataRequired()])
+    content = TextAreaField(_l('Treść'), filters=[bleach_clean_text], validators=[DataRequired()])
     picture = FileField(_l('Zdjęcie nagłówkowe (baner)'), validators=[FileAllowed(['jpg', 'png', 'jpeg'])])
     submit = SubmitField(_l('Opublikuj'))
 
 class ContactForm(FlaskForm):
-    name = StringField(_l('Twoje Imię'), validators=[DataRequired()])
-    email = StringField(_l('Twój Email'), validators=[DataRequired(), Email()])
-    subject = StringField(_l('Temat'), validators=[DataRequired()])
-    message = TextAreaField(_l('Wiadomość'), validators=[DataRequired()])
+    name = StringField(_l('Twoje Imię'), filters=[bleach_clean_text], validators=[DataRequired()])
+    email = StringField(_l('Twój Email'), filters=[bleach_clean_text], validators=[DataRequired(), Email()])
+    subject = StringField(_l('Temat'), filters=[bleach_clean_text], validators=[DataRequired()])
+    message = TextAreaField(_l('Wiadomość'), filters=[bleach_clean_text], validators=[DataRequired()])
     submit = SubmitField(_l('Wyślij'))
 
 class RequestResetForm(FlaskForm):
@@ -132,11 +144,10 @@ class ChangePasswordForm(FlaskForm):
 
 # --- FORMULARZ DLA TURNIEJÓW ---
 class TournamentForm(FlaskForm):
-    title = StringField(_l('Tytuł turnieju'), validators=[DataRequired(), Length(max=120)])
-    description = TextAreaField(_l('Opis turnieju'), validators=[DataRequired()])
+    title = StringField(_l('Tytuł turnieju'), filters=[bleach_clean_text], validators=[DataRequired(), Length(max=120)])
+    description = TextAreaField(_l('Opis turnieju'), filters=[bleach_clean_text], validators=[DataRequired()])
     banner_image = FileField(_l('Baner turnieju'), validators=[FileAllowed(['jpg', 'png', 'jpeg'])])
-    # NOWE POLE
-    location = StringField(_l('Lokalizacja'), validators=[DataRequired(), Length(max=100)])
+    location = StringField(_l('Lokalizacja'), filters=[bleach_clean_text], validators=[DataRequired(), Length(max=100)])
     start_date = DateField(_l('Data rozpoczęcia'), format='%Y-%m-%d', validators=[DataRequired()])
     end_date = DateField(_l('Data zakończenia (opcjonalnie)'), format='%Y-%m-%d', validators=[DataRequired()])
     max_players = IntegerField(_l('Maksymalna liczba graczy'), validators=[DataRequired()])

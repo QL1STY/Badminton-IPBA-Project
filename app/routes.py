@@ -2,7 +2,7 @@ import magic
 import io
 from functools import wraps
 from math import ceil
-from flask import render_template, redirect, url_for, flash, session, abort, request
+from flask import render_template, redirect, url_for, flash, session, abort, request, Response
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, current_user, logout_user, login_required
 from flask_babel import _
@@ -613,7 +613,7 @@ def delete_registration(tournament_id, user_id):
 @login_required
 @admin_required
 def tournament_registrations_json(tournament_id):
-    """Generuje plik JSON z listą zapisanych graczy."""
+    """Generuje plik JSON z listą zapisanych graczy do pobrania."""
     tournament = Tournament.query.get_or_404(tournament_id)
     registrations = []
     for reg in tournament.registrations:
@@ -621,15 +621,21 @@ def tournament_registrations_json(tournament_id):
             'username': reg.player.username,
             'first_name': reg.player.first_name,
             'last_name': reg.player.last_name,
-            'user_id': reg.player.id,
             'tournament_id': tournament.id,
             'tournament_title': tournament.title,
-            'tournament_start_date': tournament.start_date.isoformat(),
-            'email': reg.player.email,
-            'registration_date': reg.registration_date.isoformat()
-            
+            'tournament_start_date': tournament.start_date.strftime('%Y-%m-%d'),
+            'registration_date': reg.registration_date.strftime('%Y-%m-%d %H:%M:%S'),
+            'paid': False
         })
-    return jsonify(registrations)
+    json_data = json.dumps(registrations, ensure_ascii=False, indent=2)
+    filename = f"tournament_{tournament.id}_registrations.json"
+    return Response(
+        json_data,
+        mimetype='application/json',
+        headers={
+            "Content-Disposition": f"attachment;filename={filename}"
+        }
+    )
 
 @app.route('/admin/tournaments')
 @login_required

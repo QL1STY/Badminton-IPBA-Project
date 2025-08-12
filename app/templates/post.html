@@ -12,7 +12,7 @@
                 <h1 class="text-3xl md:text-3xl mb-4">{{ post.title }}</h1>
                 <div class="not-prose text-sm text-gray-500">
                     <span> {{ _('Opublikowano przez: ') }}   
-                      <span class="mx-1"></span><a href="#" class="font-semibold text-[var(--c-brand-primary)]"> {{ post.author.username }}</a></span>
+                    <span></span><span class="font-semibold text-[var(--c-brand-primary)]"> {{ post.author.username }}</span></span>
                     <span class="mx-2">·</span>
                     <span>{{ format_datetime(post.date_posted, format="long") }}</span>
                 </div>

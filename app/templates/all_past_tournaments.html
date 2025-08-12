@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mx-auto py-12 px-4">
+
+    <div data-aos="fade-down">
+        <h2 class="text-3xl font-bold text-center mb-8">{{ _('Wszystkie Przeszłe Turnieje') }}</h2>
+    </div>
+
+    {% if past_tournaments.items %}
+    <div class="grid gap-8 md:grid-cols-2">
+        {% for tournament in past_tournaments.items %}
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col sm:flex-row opacity-75 hover:opacity-100 transition h-64" data-aos="fade-right">
+            <div class="flex-shrink-0 sm:w-48">
+                <a href="{{ url_for('tournament_details', tournament_id=tournament.id) }}" class="block h-full">
+                    <img src="{{ url_for('static', filename='post_pics/' + tournament.banner_image) }}" alt="{{ tournament.title }}" class="w-full h-full object-cover">
+                </a>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+                <div>
+                    <h3 class="text-xl font-bold mb-2">{{ tournament.title }}</h3>
+                    <p class="text-gray-600 mb-2 text-sm">{{ format_datetime(tournament.start_date, format="d MMMM yyyy") }}</p>
+                    <p class="text-gray-700 mt-2 text-sm">
+                        {{ tournament.description[:200] | safe }}  ...
+                    </p>
+                     {% if tournament.winners.all() %}
+                    <div class="mt-3 flex flex-wrap justify-start items-center gap-x-4 gap-y-1 text-sm">
+                        <span class="font-semibold text-gray-700">{{ _('Zwycięzcy') }}:</span>
+                        {% for winner in tournament.winners.order_by(asc('placing')) %}
+                        <span class="flex items-center">
+                            <i class="fa-solid fa-trophy mr-1.5" style="color: {% if winner.placing == 1 %}#FFD700{% elif winner.placing == 2 %}#C0C0C0{% else %}#CD7F32{% endif %};"></i>
+                            {{ winner.placing }}. {{ winner.user.username }}
+                        </span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                <a href="{{ url_for('tournament_details', tournament_id=tournament.id) }}" class="text-gray-600 hover:text-indigo-900 self-start mt-auto pt-4 text-sm font-semibold">{{ _('Zobacz szczegóły') }}</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="text-center text-gray-500" data-aos="zoom-in">
+        <p>{{ _('Brak przeszłych turniejów.') }}</p>
+    </div>
+    {% endif %}
+
+    {% if past_tournaments.pages > 1 %}
+        <div class="mt-16" data-aos="fade-up">
+            {% set pagination = past_tournaments %}
+            {% set endpoint = 'all_past_tournaments' %}
+            {% include '_pagination.html' %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

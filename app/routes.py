@@ -531,27 +531,54 @@ def delete_account():
 
 @app.route("/tournaments")
 def tournaments():
-    page = request.args.get("page", 1, type=int)
     today = datetime.utcnow().date()
 
-    # ZMIANA: Pobieramy wszystkie nadchodzące turnieje do jednej, wspólnej listy.
+    # ZMIANA: Pobierz tylko 3 najnowsze nadchodzące turnieje
     upcoming_tournaments = (
         Tournament.query.filter(Tournament.start_date >= today)
         .order_by(Tournament.start_date.asc())
+        .limit(2)
         .all()
     )
 
-    # Przeszłe turnieje z paginacją (bez zmian)
+    # ZMIANA: Pobierz tylko 6 ostatnich przeszłych turniejów
+    past_tournaments_query = Tournament.query.filter(Tournament.start_date < today)
+    
     past_tournaments = (
-        Tournament.query.filter(Tournament.start_date < today)
-        .order_by(Tournament.start_date.desc())
-        .paginate(page=page, per_page=app.config["POSTS_PER_PAGE"])
+        past_tournaments_query.order_by(Tournament.start_date.desc())
+        .limit(6)
+        .all()
     )
+
+    # Sprawdzamy, czy istnieje więcej przeszłych turniejów, niż wyświetlamy
+    # To pozwoli nam zdecydować, czy pokazać przycisk "Zobacz wszystkie"
+    show_all_past_button = past_tournaments_query.count() > 6
 
     return render_template(
         "tournaments.html",
         title=_("Turnieje"),
         upcoming_tournaments=upcoming_tournaments,
+        past_tournaments=past_tournaments,
+        show_all_past_button=show_all_past_button,
+        asc=asc,
+        datetime=datetime  
+    )
+
+@app.route("/past_tournaments")
+def all_past_tournaments():
+    page = request.args.get("page", 1, type=int)
+    today = datetime.utcnow().date()
+
+    # Logika paginacji, która była wcześniej w /tournaments
+    past_tournaments = (
+        Tournament.query.filter(Tournament.start_date < today)
+        .order_by(Tournament.start_date.desc())
+        .paginate(page=page, per_page=6) # Ustawiamy 6 na stronę
+    )
+
+    return render_template(
+        "all_past_tournaments.html", # Wskazujemy na nowy plik szablonu
+        title=_("Wszystkie Przeszłe Turnieje"),
         past_tournaments=past_tournaments,
         asc=asc,
     )

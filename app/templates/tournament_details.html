@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container mx-auto py-12 px-4">
-    <div class="mb-6">
+    <div class="mb-6" data-aos="fade-right">
         <a href="javascript:history.back()" class="text-sm font-semibold text-gray-600 transition hover:text-[var(--c-brand-primary)] flex items-center gap-2">
             <i class="fa-solid fa-arrow-left"></i>
             <span>Wróć</span>
@@ -13,15 +13,15 @@
         
         <div class="md:col-span-2 space-y-8">
             
-            <div class="bg-white p-8 rounded-lg shadow-lg">
+            <div class="bg-white p-8 rounded-lg shadow-lg" data-aos="fade-up">
                 <h1 class="text-4xl font-bold mb-2">{{ tournament.title }}</h1>
                 <p class="text-lg text-gray-600 mb-4">{{ _('Data:') }} {{ format_datetime(tournament.start_date, format="d MMMM yyyy") }}</p>
-                <div class="prose max-w-none mt-6">
+                <div class="prose max-w-none mt-6" >
                     {{ tournament.description | safe }}
                 </div>
                 
                 {% if current_user.is_authenticated and current_user.is_admin %}
-                <div class="mt-8 border-t pt-6">
+                <div class="mt-8 border-t pt-6" data-aos="fade-up">
                     <a href="{{ url_for('admin_update_tournament', tournament_id=tournament.id) }}" class="inline-flex items-center rounded-md bg-gray-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-gray-700">
                         <i class="fa-solid fa-pen-to-square mr-2"></i>
                         {{ _('Edytuj Turniej') }}
@@ -30,7 +30,7 @@
                 {% endif %}
             </div>
 
-            <div class="bg-white p-8 rounded-lg shadow-lg h-fit">
+            <div class="bg-white p-8 rounded-lg shadow-lg h-fit" data-aos="fade-up">
                 <h2 class="text-2xl font-bold mb-4">{{ _('Rejestracja') }}</h2>
                 
                 {% if tournament.start_date >= datetime.utcnow() %}
@@ -98,7 +98,7 @@
             {% endif %}
         </div>
 
-        <div class="md:col-span-1">
+        <div class="md:col-span-1" data-aos="fade-left" data-aos-delay="200">
             <div class="sticky top-24">
                 <img src="{{ url_for('static', filename='post_pics/' + tournament.banner_image) }}" alt="{{ tournament.title }}" class="w-full object-cover rounded-lg shadow-lg">
             </div>

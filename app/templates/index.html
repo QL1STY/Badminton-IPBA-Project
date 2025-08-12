@@ -1,26 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="relative h-[87vh] bg-cover bg-center" style='background-image: url("{{ url_for('static', filename='images/hero.png') }}");'>
-    <div class="absolute inset-0 "></div>
-    <div class="relative z-10 flex h-full flex-col items-center justify-center text-center text-white">
-        <h2 class="text-4xl font-extrabold md:text-6xl">{{ _('Jedność poprzez sport') }}</h2>
-        <p class="mt-4 max-w-2xl text-lg md:text-xl">{{ _('Łączymy Ludzi na korcie badmintonowym. <br> Poznaj naszą historię, dołącz do naszych wydarzeń.') }}</p>
+<section class="relative h-[87vh] bg-gray-800 overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center" style='background-image: url("{{ url_for('static', filename='images/hero.png') }}"); animation: heroBackgroundAnimation 4s ease-out forwards;'></div>    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="relative z-10 flex h-full flex-col items-center justify-center text-center text-white p-4">
+        <h2 class="text-4xl font-extrabold md:text-6xl animate-fadeInUp" style="animation-delay: 0.2s;">{{ _('Jedność poprzez sport') }}</h2>
+        <p class="mt-4 max-w-2xl text-lg md:text-xl animate-fadeInUp" style="animation-delay: 0.5s;">{{ _('Łączymy Ludzi na korcie badmintonowym. <br> Poznaj naszą historię, dołącz do naszych wydarzeń.') }}</p>
         {% if not current_user.is_authenticated %}
-            <a class="mt-8 inline-block rounded-md bg-[var(--c-brand-primary)] px-8 py-3 text-lg font-bold text-white transition hover:bg-[var(--c-brand-primary)]/90" href="{{ url_for('rejestracja') }}">{{ _('Dołącz do nas') }}</a>
+            <a class="mt-8 inline-block rounded-md bg-[var(--c-brand-primary)] px-8 py-3 text-lg font-bold text-white transition hover:bg-[var(--c-brand-primary)]/90 animate-fadeInUp" style="animation-delay: 0.8s;" href="{{ url_for('rejestracja') }}">{{ _('Dołącz do nas') }}</a>
         {% endif %}
     </div>
 </section>
 
 <section class="py-16 sm:py-24" id="news">
     <div class="container mx-auto px-6">
-        <div class="mb-12 text-center">
+        <div class="mb-12 text-center" data-aos="fade-up">
             <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ _('Najnowsze Posty') }}</h2>
             <div class="mx-auto mt-4 h-1 w-24 rounded bg-[var(--c-brand-primary)]"></div>
         </div>
         <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
             {% for post in posts %}
-            <div class="overflow-hidden rounded-lg bg-white shadow-lg transition-transform duration-300 hover:scale-105">
+            <div class="overflow-hidden rounded-lg bg-white shadow-lg transition-transform duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
                 <a href="{{ url_for('post', post_id=post.id) }}">
                     <img alt="{{ post.title }}" class="h-56 w-full object-cover" src="{{ url_for('static', filename='post_pics/' + post.image_file) }}">
                 </a>
@@ -34,7 +34,7 @@
                 </div>
             </div>
             {% else %}
-            <div class="col-span-3 text-center text-gray-500">
+            <div class="col-span-3 text-center text-gray-500" data-aos="fade-up">
                 <p>{{ _('Brak postów do wyświetlenia') }}</p>
             </div>
             {% endfor %}
@@ -44,13 +44,13 @@
 
 <section class="bg-gray-200 py-16 sm:py-24" id="tournaments">
     <div class="container mx-auto px-6 max-w-4xl">
-        <div class="mb-12 text-center">
+        <div class="mb-12 text-center" data-aos="fade-up">
             <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ _('Nadchodzące Turnieje') }}</h2>
             <div class="mx-auto mt-4 h-1 w-24 rounded bg-[var(--c-brand-primary)]"></div>
         </div>
         <div class="space-y-8">
             {% for tournament in upcoming_tournaments %}
-            <div class="flex flex-col rounded-lg bg-white p-6 shadow-md transition sm:flex-row sm:items-center sm:p-10">
+            <div class="flex flex-col rounded-lg bg-white p-6 shadow-md transition sm:flex-row sm:items-center sm:p-10" data-aos="fade-left">
                 <div class="mb-4 flex flex-col items-center text-center sm:mb-0 sm:mr-8 flex-shrink-0">
                     <div class="text-5xl font-extrabold text-gray-900">{{ format_datetime(tournament.start_date, format="d") }}</div>
                     <div class="text-4xl font-bold text-[var(--c-brand-primary)]">{{ format_datetime(tournament.start_date, format="MMM").upper() }}</div>
@@ -64,20 +64,19 @@
                 <a class="mt-4 inline-block rounded-md bg-[var(--c-brand-secondary)] px-6 py-2 font-semibold text-white transition hover:bg-[var(--c-brand-secondary)]/90 sm:mt-0 sm:ml-6 flex-shrink-0" href="{{ url_for('tournament_details', tournament_id=tournament.id) }}">{{ _('Szczegóły') }}</a>
             </div>
             {% else %}
-            <div class="rounded-lg bg-white p-6 shadow-md text-center text-gray-500">
+            <div class="rounded-lg bg-white p-6 shadow-md text-center text-gray-500" data-aos="fade-up">
                 <p>{{ _('Brak nadchodzących turniejów') }}</p>
             </div>
             {% endfor %}
         </div>
 
-        <div class="mt-20 text-center">
+        <div class="mt-20 text-center" data-aos="fade-up">
             <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ _('Poprzednie Eventy i Zwycięzcy') }}</h2>
             <div class="mx-auto mt-4 h-1 w-24 rounded bg-[var(--c-brand-primary)]"></div>
         </div>
         <div class="mt-12 space-y-8">
             {% for tournament in past_tournaments %}
-            {# POPRAWKA: Dodano klasę "sm:items-center" do kontenera flex #}
-            <div class="flex flex-col rounded-lg bg-white p-6 shadow-md transition sm:flex-row sm:items-center sm:p-8 opacity-80">
+            <div class="flex flex-col rounded-lg bg-white p-6 shadow-md transition sm:flex-row sm:items-center sm:p-8 opacity-80" data-aos="fade-right">
                 <div class="mb-4 flex flex-col items-center text-center sm:mb-0 sm:mr-8 flex-shrink-0">
                     <div class="text-5xl font-bold text-gray-500">{{ format_datetime(tournament.start_date, format="d") }}</div>
                     <div class="text-4xl font-extrabold text-gray-400">{{ format_datetime(tournament.start_date, format="MMM").upper() }}</div>
@@ -102,7 +101,7 @@
                 <a class="mt-4 inline-block rounded-md bg-gray-400 px-6 py-2 font-semibold text-white sm:mt-0 sm:ml-6 flex-shrink-0" href="{{ url_for('tournament_details', tournament_id=tournament.id) }}">{{ _('Zobacz szczegóły') }}</a>
             </div>
             {% else %}
-            <div class="rounded-lg bg-white p-6 shadow-md text-center text-gray-500">
+            <div class="rounded-lg bg-white p-6 shadow-md text-center text-gray-500" data-aos="fade-up">
                 <p>{{ _('Brak poprzednich wydarzeń') }}</p>
             </div>
             {% endfor %}

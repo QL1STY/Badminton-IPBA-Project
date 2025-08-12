@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
-        <div class="md:col-span-1">
+        <div class="md:col-span-1" data-aos="fade-right">
             <div class="rounded-lg bg-white p-6 text-center shadow-lg">
                 <div class="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-gray-200 text-gray-500">
                     <i class="fa-solid fa-user fa-3x"></i>
@@ -15,7 +15,7 @@
         </div>
 
         <div class="space-y-10 md:col-span-2">
-            <div class="rounded-lg bg-white p-8 shadow-lg">
+            <div class="rounded-lg bg-white p-8 shadow-lg" data-aos="fade-left">
                 <form method="POST" action="">
                     {{ update_form.hidden_tag() }}
                     <h3 class="text-2xl font-bold text-gray-900">{{ _('Zaktualizuj swoje dane') }}</h3>
@@ -48,7 +48,7 @@
                 </form>
             </div>
 
-            <div class="rounded-lg bg-white p-8 shadow-lg">
+            <div class="rounded-lg bg-white p-8 shadow-lg" data-aos="fade-left" data-aos-delay="100">
                 <form method="POST" action="">
                     {{ password_form.hidden_tag() }}
                     <h3 class="text-2xl font-bold text-gray-900">{{ _('Zmień hasło') }}</h3>
@@ -72,7 +72,7 @@
                 </form>
             </div>
             
-            <div class="rounded-lg border-2 border-red-500 bg-white p-8 shadow-lg">
+            <div class="rounded-lg border-2 border-red-500 bg-white p-8 shadow-lg" data-aos="zoom-in" data-aos-delay="200">
                 <h3 class="text-2xl font-bold text-red-700">{{ _('Strefa Zagrożenia') }}</h3>
                 <div class="mt-6">
                     <p class="text-sm text-gray-700">{{ _('Usunięcie konta jest operacją permanentną i nieodwracalną. Wszystkie Twoje dane zostaną usunięte z serwisu.') }}</p>

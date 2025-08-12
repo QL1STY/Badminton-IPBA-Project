@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mx-auto max-w-2xl py-12 px-4">
+    <div class="bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold mb-6">{{ title }}</h2>
+        <form method="POST" action="" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <div class="space-y-4">
+                <div>
+                    {{ form.title.label(class="block text-sm font-medium text-gray-700") }}
+                    {{ form.title(class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500") }}
+                </div>
+                <div>
+                    {{ form.description.label(class="block text-sm font-medium text-gray-700") }}
+                    {{ form.description(class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500", rows=5) }}
+                </div>
+                <div>
+                    {{ form.location.label(class="block text-sm font-medium text-gray-700") }}
+                    {{ form.location(class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500") }}
+                </div>
+                <div>
+                    {{ form.banner_image.label(class="block text-sm font-medium text-gray-700") }}
+                    {{ form.banner_image(class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-600 hover:file:bg-indigo-100") }}
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        {{ form.start_date.label(class="block text-sm font-medium text-gray-700") }}
+                        {{ form.start_date(class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500") }}
+                    </div>
+                     <div>
+                        {{ form.end_date.label(class="block text-sm font-medium text-gray-700") }}
+                        {{ form.end_date(class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500") }}
+                    </div>
+                </div>
+                <div>
+                    {{ form.max_players.label(class="block text-sm font-medium text-gray-700") }}
+                    {{ form.max_players(class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500") }}
+                </div>
+                <div class="pt-5">
+                    <input type="submit" value="{{ _('Zapisz turniej') }}" class="w-full bg-[var(--c-brand-primary)] text-white font-bold py-2 px-4 rounded hover:bg-[var(--c-brand-primary)]/90" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

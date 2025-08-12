@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="mb-12 text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ _('Panel Administratora') }}</h2>
+        <div class="mx-auto mt-4 h-1 w-24 rounded bg-[var(--c-brand-primary)]"></div>
+    </div>
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-lg bg-white p-6 text-center shadow-lg">
+            <i class="fa-solid fa-users fa-3x text-[var(--c-brand-primary)]"></i>
+            <p class="mt-4 text-5xl font-extrabold text-gray-900">{{ user_count }}</p>
+            <h3 class="mt-2 text-lg font-medium text-gray-700">{{ _('Liczba Użytkowników') }}</h3>
+            <a href="{{ url_for('admin_manage_users') }}" class="mt-6 inline-block rounded-md bg-gray-700 px-6 py-2 font-semibold text-white transition hover:bg-gray-800">{{ _('Zarządzaj Użytkownikami') }}</a>
+        </div>
+        <div class="rounded-lg bg-white p-6 text-center shadow-lg">
+            <i class="fa-solid fa-newspaper fa-3x text-[var(--c-brand-primary)]"></i>
+            <p class="mt-4 text-5xl font-extrabold text-gray-900">{{ post_count }}</p>
+            <h3 class="mt-2 text-lg font-medium text-gray-700">{{ _('Liczba Postów') }}</h3>
+            <a href="{{ url_for('admin_manage_posts') }}" class="mt-6 inline-block rounded-md bg-gray-700 px-6 py-2 font-semibold text-white transition hover:bg-gray-800">{{ _('Zarządzaj Postami') }}</a>
+        </div>
+        <div class="rounded-lg bg-white p-6 text-center shadow-lg">
+            <i class="fa-solid fa-trophy fa-3x text-[var(--c-brand-primary)]"></i>
+            <p class="mt-4 text-5xl font-extrabold text-gray-900">{{ tournament_count }}</p>
+            <h3 class="mt-2 text-lg font-medium text-gray-700">{{ _('Liczba Turniejów') }}</h3>
+            <a href="{{ url_for('admin_manage_tournaments') }}" class="mt-6 inline-block rounded-md bg-gray-700 px-6 py-2 font-semibold text-white transition hover:bg-gray-800">{{ _('Zarządzaj Turniejami') }}</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

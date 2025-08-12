@@ -1,0 +1,25 @@
+<nav aria-label="Pagination" class="flex items-center justify-center text-sm text-gray-600">
+    <!-- Previous Button -->
+    <a href="{{ url_for(endpoint, page=pagination.prev_num) if pagination.has_prev else '#' }}"
+       class="inline-flex h-10 items-center justify-center rounded-l-md border border-gray-300 bg-white px-4 font-semibold transition hover:bg-gray-50 {% if not pagination.has_prev %} cursor-not-allowed opacity-50 {% endif %}">
+        &laquo; <span class="ml-2 hidden sm:inline">{{ _('Poprzedni') }}</span>
+    </a>
+
+    <!-- Page Numbers -->
+    {% for page_num in pagination.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+        {% if page_num %}
+            <a href="{{ url_for(endpoint, page=page_num) }}"
+               class="hidden h-10 items-center justify-center border-y border-gray-300 bg-white px-4 font-semibold transition hover:bg-gray-50 sm:inline-flex {% if pagination.page == page_num %} bg-[var(--c-brand-primary)] text-white hover:bg-[var(--c-brand-primary)]/90 border-[var(--c-brand-primary)] {% endif %}">
+                {{ page_num }}
+            </a>
+        {% else %}
+            <span class="hidden h-10 items-center justify-center border-y border-gray-300 bg-white px-4 font-semibold sm:inline-flex">...</span>
+        {% endif %}
+    {% endfor %}
+
+    <!-- Next Button -->
+    <a href="{{ url_for(endpoint, page=pagination.next_num) if pagination.has_next else '#' }}"
+       class="inline-flex h-10 items-center justify-center rounded-r-md border border-gray-300 bg-white px-4 font-semibold transition hover:bg-gray-50 {% if not pagination.has_next %} cursor-not-allowed opacity-50 {% endif %}">
+        <span class="mr-2 hidden sm:inline">{{ _('Następny') }}</span> &raquo;
+    </a>
+</nav>

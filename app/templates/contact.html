@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="bg-gray-100 py-16 sm:py-24">
+    <div class="container mx-auto px-6">
+        <div class="mx-auto max-w-4xl">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ _('Skontakuj się z nami') }}</h2>
+                <p class="mt-3 text-lg text-gray-600">{{ _('Masz pytania? Chcesz dołączyć do naszej organizacji?') }}</p>
+                <p class="mt-3 text-lg text-gray-600">{{ _('Wypełnij formularz lub skorzystaj z danych poniżej.') }}</p>
+                <div class="mx-auto mt-4 h-1 w-24 rounded bg-[var(--c-brand-primary)]"></div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
+                <!-- Contact Info -->
+                <div class="rounded-lg bg-white p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900">{{ _('Informacje Kontaktowe') }}</h3>
+                    <div class="mt-6 space-y-4 text-gray-600"> 
+                        <p class="flex items-start">
+                            <i class="fa-solid fa-building mr-3 mt-1 h-5 w-5 text-[var(--c-brand-primary)]"></i>
+                            <span><strong>{{ _('Nazwa organizacji') }}:</strong><br>Stowarzyszenie Indo-Polish Sport</span>
+                        </p>
+                        <p class="flex items-start">
+                            <i class="fa-solid fa-location-dot mr-3 mt-1 h-5 w-5 text-[var(--c-brand-primary)]"></i>
+                            <span><strong>{{ _('Adres') }}:</strong><br>Ulica przykład, Kraków, Polska</span>
+                        </p>
+                        <p class="flex items-start">
+                            <i class="fa-solid fa-envelope mr-3 mt-1 h-5 w-5 text-[var(--c-brand-primary)]"></i>
+                            <span><strong>{{ _('E-mail') }}:</strong><br>info.ibpa.gmail.com</span>
+                        </p>
+                        <p class="flex items-start">
+                            <i class="fa-solid fa-phone mr-3 mt-1 h-5 w-5 text-[var(--c-brand-primary)]"></i>
+                            <span><strong>{{ _('Telefon') }}:</strong><br>+48 661 632 000</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="rounded-lg bg-white p-8 shadow-lg">
+                     <h3 class="text-2xl font-bold text-gray-900">{{ _('Wyślij nam wiadomość') }}</h3>
+                    <form method="POST" action="{{ url_for('kontakt') }}" class="mt-6 space-y-4">
+                        {{ form.hidden_tag() }}
+                        
+                        <div>
+                            {{ form.name.label(class="sr-only") }}
+                            {{ form.name(class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-[var(--c-brand-primary)] focus:outline-none focus:ring-[var(--c-brand-primary)] sm:text-sm", placeholder=_('Twoje Imie')) }}
+                        </div>
+                        
+                        <div>
+                            {{ form.email.label(class="sr-only") }}
+                            {{ form.email(class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-[var(--c-brand-primary)] focus:outline-none focus:ring-[var(--c-brand-primary)] sm:text-sm", placeholder=_('Twój adres e-mail')) }}
+                        </div>
+
+                        <div>
+                            {{ form.subject.label(class="sr-only") }}
+                            {{ form.subject(class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-[var(--c-brand-primary)] focus:outline-none focus:ring-[var(--c-brand-primary)] sm:text-sm", placeholder=_('Temat')) }}
+                        </div>
+
+                        <div>
+                            {{ form.message.label(class="sr-only") }}
+                            {{ form.message(class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-[var(--c-brand-primary)] focus:outline-none focus:ring-[var(--c-brand-primary)] sm:text-sm", rows="5", placeholder=_('Twoja wiadomość')) }}
+                        </div>
+
+                        <div>
+                            {{ form.submit(class="group relative flex w-full justify-center rounded-md border border-transparent bg-[var(--c-brand-primary)] py-2 px-4 text-sm font-medium text-white hover:bg-[var(--c-brand-primary)]/90 focus:outline-none focus:ring-2 focus:ring-[var(--c-brand-primary)] focus:ring-offset-2") }}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-08-11 19:45+0200\n"
-"PO-Revision-Date: 2025-08-11 19:50+0200\n"
+"POT-Creation-Date: 2025-08-12 15:39+0200\n"
+"PO-Revision-Date: 2025-08-12 15:30+0200\n"
 "Last-Translator: Gemini AI\n"
 "Language: en\n"
 "Language-Team: en <LL@li.org>\n"
@@ -18,439 +18,477 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: app/__init__.py:57
+#: app/__init__.py:70
 msgid "Proszę się zalogować, aby uzyskać dostęp do tej strony."
 msgstr "Please log in to access this page."
 
-#: app/forms.py:24
-msgid "Miejsce"
-msgstr "Location"
-
-#: app/forms.py:26
-msgid "Użytkownik"
-msgstr "User"
-
-#: app/forms.py:27
-msgid "Dodaj zwycięzcę"
-msgstr "Add winner"
-
-#: app/forms.py:32
+#: app/forms.py:63
 msgid "Nazwa użytkownika zawiera niedozwolone słowa."
 msgstr "Username contains forbidden words."
 
-#: app/forms.py:38
+#: app/forms.py:70
 msgid "Hasło musi mieć od 4 do 24 znaków."
 msgstr "Password must be between 4 and 24 characters."
 
-#: app/forms.py:40
+#: app/forms.py:72
 msgid "Musi zawierać małą literę."
 msgstr "Must contain a lowercase letter."
 
-#: app/forms.py:42
+#: app/forms.py:74
 msgid "Musi zawierać dużą literę."
 msgstr "Must contain an uppercase letter."
 
-#: app/forms.py:44
+#: app/forms.py:76
 msgid "Musi zawierać znak specjalny."
 msgstr "Must contain a special character."
 
-#: app/forms.py:51 app/forms.py:107
+#: app/forms.py:87
+msgid "Miejsce"
+msgstr "Place"
+
+#: app/forms.py:90
+msgid "Użytkownik"
+msgstr "User"
+
+#: app/forms.py:95
+msgid "Dodaj zwycięzcę"
+msgstr "Add Winner"
+
+#: app/forms.py:100 app/forms.py:211 app/templates/register.html:16
 msgid "Imię"
 msgstr "First Name"
 
-#: app/forms.py:52 app/forms.py:109
+#: app/forms.py:105 app/forms.py:214 app/templates/register.html:23
 msgid "Nazwisko"
 msgstr "Last Name"
 
-#: app/forms.py:53 app/forms.py:111
+#: app/forms.py:110 app/forms.py:217 app/templates/register.html:32
 msgid "Nazwa użytkownika"
 msgstr "Username"
 
-#: app/forms.py:55 app/forms.py:93 app/templates/contact.html:28
+#: app/forms.py:115 app/forms.py:191
 msgid "Email"
 msgstr "Email"
 
-#: app/forms.py:56
+#: app/forms.py:119
 msgid "Niepoprawny format adresu email."
 msgstr "Invalid email format."
 
-#: app/forms.py:57 app/forms.py:75
+#: app/forms.py:123 app/forms.py:153 app/templates/login.html:18
+#: app/templates/register.html:48
 msgid "Hasło"
 msgstr "Password"
 
-#: app/forms.py:58
+#: app/forms.py:126
 msgid "Potwierdź hasło"
 msgstr "Confirm Password"
 
-#: app/forms.py:59 app/forms.py:103 app/forms.py:129
+#: app/forms.py:129 app/forms.py:203 app/forms.py:243
 msgid "Hasła muszą być identyczne."
 msgstr "Passwords must match."
 
-#: app/forms.py:60
+#: app/forms.py:132 app/templates/base.html:65 app/templates/base.html:115
 msgid "Zarejestruj się"
 msgstr "Register"
 
-#: app/forms.py:65 app/forms.py:122
+#: app/forms.py:138 app/forms.py:230
 msgid "Ta nazwa użytkownika jest już zajęta. Proszę wybrać inną."
 msgstr "This username is already taken. Please choose another one."
 
-#: app/forms.py:70
+#: app/forms.py:145
 msgid "Ten adres email jest już zajęty. Proszę wybrać inny."
 msgstr "This email address is already taken. Please choose another one."
 
-#: app/forms.py:73
+#: app/forms.py:151
 msgid "Nazwa użytkownika lub Email"
 msgstr "Username or Email"
 
-#: app/forms.py:76
+#: app/forms.py:154
 msgid "Zapamiętaj mnie"
 msgstr "Remember me"
 
-#: app/forms.py:77
+#: app/forms.py:155 app/templates/base.html:64 app/templates/base.html:114
+#: app/templates/register.html:71
 msgid "Zaloguj się"
 msgstr "Log in"
 
-#: app/forms.py:80
+#: app/forms.py:160 app/templates/admin/manage_posts.html:19
+#: app/templates/admin/manage_tournaments.html:20
 msgid "Tytuł"
 msgstr "Title"
 
-#: app/forms.py:81
+#: app/forms.py:163
 msgid "Treść"
 msgstr "Content"
 
-#: app/forms.py:82
+#: app/forms.py:166
 msgid "Zdjęcie nagłówkowe (baner)"
 msgstr "Header image (banner)"
 
-#: app/forms.py:83
+#: app/forms.py:169 app/templates/create_post.html:30
 msgid "Opublikuj"
 msgstr "Publish"
 
-#: app/forms.py:86
+#: app/forms.py:174
 msgid "Twoje Imię"
 msgstr "Your Name"
 
-#: app/forms.py:87
+#: app/forms.py:177
 msgid "Twój Email"
 msgstr "Your Email"
 
-#: app/forms.py:88
+#: app/forms.py:182 app/templates/contact.html:56
 msgid "Temat"
 msgstr "Subject"
 
-#: app/forms.py:89
+#: app/forms.py:185
 msgid "Wiadomość"
 msgstr "Message"
 
-#: app/forms.py:90
+#: app/forms.py:187
 msgid "Wyślij"
 msgstr "Send"
 
-#: app/forms.py:94
+#: app/forms.py:192
 msgid "Poproś o reset hasła"
 msgstr "Request password reset"
 
-#: app/forms.py:99
-msgid "Konto z tym adresem email nie istnieje."
-msgstr "An account with this email address does not exist."
-
-#: app/forms.py:102 app/forms.py:126
+#: app/forms.py:197 app/forms.py:237 app/templates/reset_token.html:14
 msgid "Nowe hasło"
 msgstr "New Password"
 
-#: app/forms.py:103 app/forms.py:128
+#: app/forms.py:200 app/forms.py:240
 msgid "Potwierdź nowe hasło"
 msgstr "Confirm New Password"
 
-#: app/forms.py:104
+#: app/forms.py:206 app/templates/reset_request.html:7
 msgid "Zresetuj hasło"
 msgstr "Reset Password"
 
-#: app/forms.py:113
+#: app/forms.py:220
 msgid "Zaktualizuj dane"
 msgstr "Update details"
 
-#: app/forms.py:125
+#: app/forms.py:235
 msgid "Stare hasło"
 msgstr "Old Password"
 
-#: app/forms.py:130
+#: app/forms.py:246 app/templates/profile.html:58
 msgid "Zmień hasło"
 msgstr "Change Password"
 
-#: app/forms.py:134
+#: app/forms.py:252
 msgid "Tytuł turnieju"
 msgstr "Tournament Title"
 
-#: app/forms.py:135
+#: app/forms.py:257
 msgid "Opis turnieju"
 msgstr "Tournament Description"
 
-#: app/forms.py:136
+#: app/forms.py:260
 msgid "Baner turnieju"
 msgstr "Tournament Banner"
 
-#: app/forms.py:138
+#: app/forms.py:263 app/templates/index.html:61 app/templates/index.html:88
 msgid "Lokalizacja"
 msgstr "Location"
 
-#: app/forms.py:139
+#: app/forms.py:268
 msgid "Data rozpoczęcia"
 msgstr "Start Date"
 
-#: app/forms.py:140
+#: app/forms.py:271
 msgid "Data zakończenia (opcjonalnie)"
 msgstr "End Date (optional)"
 
-#: app/forms.py:141
+#: app/forms.py:276
 msgid "Maksymalna liczba graczy"
 msgstr "Maximum number of players"
 
-#: app/forms.py:142
+#: app/forms.py:278 app/templates/create_tournament.html:41
 msgid "Zapisz turniej"
 msgstr "Save tournament"
 
-#: app/routes.py:69
+#: app/forms.py:282 app/templates/admin/manage_posts.html:34
+#: app/templates/admin/manage_posts.html:52
+#: app/templates/admin/manage_tournaments.html:54
+#: app/templates/admin/manage_users.html:56 app/templates/post.html:48
+#: app/templates/tournament_details.html:51
+msgid "Usuń"
+msgstr "Delete"
+
+#: app/forms.py:286
+msgid "Hasło administratora"
+msgstr "Administrator password"
+
+#: app/forms.py:287 app/routes.py:614
+msgid "Potwierdź operację"
+msgstr "Confirm operation"
+
+#: app/routes.py:121
 msgid "Strona Główna"
-msgstr "Home"
+msgstr "Home Page"
 
-#: app/routes.py:95
+#: app/routes.py:159
 msgid "Konto zostało utworzone! Link weryfikacyjny został wysłany na Twój email."
-msgstr "Your account has been created! A verification link has been sent to your email."
+msgstr ""
+"Your account has been created! A verification link has been sent to your "
+"email."
 
-#: app/routes.py:97 app/templates/tournament_details.html:39
+#: app/routes.py:164 app/templates/tournament_details.html:18
 msgid "Rejestracja"
 msgstr "Registration"
 
-#: app/routes.py:105
+#: app/routes.py:172
 msgid "Twoje konto jest już zweryfikowane."
 msgstr "Your account is already verified."
 
-#: app/routes.py:109
+#: app/routes.py:178
 msgid "Twój email został pomyślnie zweryfikowany! Możesz się teraz zalogować."
 msgstr "Your email has been successfully verified! You can now log in."
 
-#: app/routes.py:111
+#: app/routes.py:183
 msgid "Link weryfikacyjny jest nieprawidłowy lub wygasł."
 msgstr "The verification link is invalid or has expired."
 
-#: app/routes.py:127
+#: app/routes.py:202
 msgid ""
 "Twoje konto nie zostało jeszcze zweryfikowane. Sprawdź swoją skrzynkę "
 "mailową."
 msgstr "Your account has not been verified yet. Please check your email inbox."
 
-#: app/routes.py:131
+#: app/routes.py:209
 msgid "Zalogowano pomyślnie!"
 msgstr "You have been logged in successfully!"
 
-#: app/routes.py:134
+#: app/routes.py:212
 msgid "Logowanie nie powiodło się. Sprawdź dane i hasło."
 msgstr "Login failed. Please check your details and password."
 
-#: app/routes.py:135
+#: app/routes.py:213
 msgid "Logowanie"
 msgstr "Login"
 
-#: app/routes.py:150
+#: app/routes.py:230
 msgid ""
 "Jeśli konto istnieje, instrukcje resetowania hasła zostały wysłane na "
 "email."
-msgstr "If an account with that email exists, password reset instructions have been sent."
+msgstr ""
+"If an account with that email exists, password reset instructions have "
+"been sent."
 
-#: app/routes.py:152 app/routes.py:169
+#: app/routes.py:235 app/routes.py:256
 msgid "Reset Hasła"
 msgstr "Reset Password"
 
-#: app/routes.py:160
+#: app/routes.py:244
 msgid "Link do resetowania hasła jest nieprawidłowy lub wygasł."
 msgstr "The password reset link is invalid or has expired."
 
-#: app/routes.py:167
+#: app/routes.py:252
 msgid "Twoje hasło zostało zaktualizowane! Możesz się teraz zalogować."
 msgstr "Your password has been updated! You can now log in."
 
-#: app/routes.py:184 app/templates/base.html:64 app/templates/base.html:102
-msgid "Aktualności"
+#: app/routes.py:271
+msgid "News"
 msgstr "News"
 
-#: app/routes.py:189
+#: app/routes.py:276
 msgid "Sponsorzy i Dofinansowanie"
 msgstr "Sponsors and Funding"
 
-#: app/routes.py:200
-msgid "Folder ze zdjęciami galerii nie został znaleziony."
-msgstr "The gallery images folder was not found."
-
-#: app/routes.py:217
-msgid "Galeria"
-msgstr "Gallery"
-
-#: app/routes.py:247
+#: app/routes.py:302
 msgid "Twoja wiadomość została wysłana! Dziękujemy."
 msgstr "Your message has been sent! Thank you."
 
-#: app/routes.py:251
+#: app/routes.py:309
 msgid "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później."
 msgstr "An error occurred while sending the message. Please try again later."
 
-#: app/routes.py:253
+#: app/routes.py:314 app/templates/base.html:155
 msgid "Kontakt"
 msgstr "Contact"
 
-#: app/routes.py:260
+#: app/routes.py:319 app/templates/base.html:154
 msgid "Regulamin"
 msgstr "Regulations"
 
-#: app/routes.py:285
-msgid "Twój post został opublikowany!"
-msgstr "Your post has been published!"
+#: app/routes.py:343 app/routes.py:393 app/routes.py:693 app/routes.py:791
+msgid "Przesłany plik nie jest prawidłowym obrazem (dozwolone formaty: JPG, PNG)."
+msgstr "The uploaded file is not a valid image (allowed formats: JPG, PNG)."
 
-#: app/routes.py:287
+#: app/routes.py:348 app/routes.py:367
 msgid "Nowy Post"
 msgstr "New Post"
 
-#: app/routes.py:306
-msgid "Post został zaktualizowany!"
-msgstr "The post has been updated!"
+#: app/routes.py:365
+msgid "Twój post został opublikowany!"
+msgstr "Your post has been published!"
 
-#: app/routes.py:311
+#: app/routes.py:398 app/routes.py:408 app/templates/post.html:27
 msgid "Edytuj Post"
 msgstr "Edit Post"
 
-#: app/routes.py:321
+#: app/routes.py:403
+msgid "Post został zaktualizowany!"
+msgstr "The post has been updated!"
+
+#: app/routes.py:418
 msgid "Twój post został usunięty."
 msgstr "Your post has been deleted."
 
-#: app/routes.py:348
+#: app/routes.py:441
 msgid "Nazwę użytkownika można zmieniać tylko raz na 14 dni."
 msgstr "Username can only be changed once every 14 days."
 
-#: app/routes.py:355
+#: app/routes.py:450
 msgid "Twoje dane zostały zaktualizowane!"
 msgstr "Your details have been updated!"
 
-#: app/routes.py:363
+#: app/routes.py:461
 msgid "Twoje hasło zostało zmienione!"
 msgstr "Your password has been changed!"
 
-#: app/routes.py:366
+#: app/routes.py:464
 msgid "Stare hasło jest nieprawidłowe."
 msgstr "The old password is incorrect."
 
-#: app/routes.py:374
+#: app/routes.py:473
 msgid "Profil Użytkownika"
 msgstr "User Profile"
 
-#: app/routes.py:384
+#: app/routes.py:486 app/templates/base.html:53 app/templates/base.html:97
 msgid "Turnieje"
 msgstr "Tournaments"
 
-#: app/routes.py:406
+#: app/routes.py:510
 msgid "Nie można zapisać się na turniej, który już się rozpoczął."
 msgstr "You cannot register for a tournament that has already started."
 
-#: app/routes.py:410
+#: app/routes.py:514
 msgid "Lista uczestników jest już pełna!"
 msgstr "The participant list is already full!"
 
-#: app/routes.py:416
+#: app/routes.py:520
 msgid "Zostałeś pomyślnie zapisany na turniej!"
 msgstr "You have been successfully registered for the tournament!"
 
-#: app/routes.py:427
+#: app/routes.py:530
 msgid "Nie można wypisać się z turnieju, który już się rozpoczął."
 msgstr "You cannot unregister from a tournament that has already started."
 
-#: app/routes.py:433
+#: app/routes.py:538
 msgid "Zostałeś wypisany z turnieju."
 msgstr "You have been unregistered from the tournament."
 
-#: app/routes.py:447
+#: app/routes.py:544
 msgid "Nie znaleziono strony"
 msgstr "Page Not Found"
 
-#: app/routes.py:452
+#: app/routes.py:549
 msgid "Brak dostępu"
 msgstr "Access Denied"
 
-#: app/routes.py:471
+#: app/routes.py:561 app/templates/admin/dashboard.html:5
+#: app/templates/base.html:60 app/templates/base.html:110
 msgid "Panel Administratora"
 msgstr "Admin Panel"
 
-#: app/routes.py:482
+#: app/routes.py:576 app/templates/admin/dashboard.html:13
 msgid "Zarządzaj Użytkownikami"
 msgstr "Manage Users"
 
-#: app/routes.py:493
-msgid "Nie możesz odebrać sobie uprawnień administratora."
-msgstr "You cannot revoke your own admin privileges."
+#: app/routes.py:588
+msgid "Nie możesz zmieniać własnych uprawnień w ten sposób."
+msgstr "You cannot change your own permissions this way."
 
-#: app/routes.py:499
+#: app/routes.py:592
+msgid "nadania"
+msgstr "granting"
+
+#: app/routes.py:592
+msgid "odebrania"
+msgstr "revoking"
+
+#: app/routes.py:598
 msgid "nadano"
 msgstr "granted"
 
-#: app/routes.py:499
+#: app/routes.py:598
 msgid "odebrano"
 msgstr "revoked"
 
-#: app/routes.py:500
+#: app/routes.py:601
 #, python-format
 msgid ""
 "Pomyślnie %(status)s uprawnienia administratora użytkownikowi "
 "%(username)s."
 msgstr "Successfully %(status)s admin privileges for user %(username)s."
 
-#: app/routes.py:513
+#: app/routes.py:609
+msgid "Nieprawidłowe hasło. Operacja anulowana."
+msgstr "Invalid password. Operation cancelled."
+
+#: app/routes.py:630
 msgid "Nie możesz usunąć własnego konta z panelu administratora."
 msgstr "You cannot delete your own account from the admin panel."
 
-#: app/routes.py:523
+#: app/routes.py:638
 #, python-format
 msgid "Użytkownik %(username)s i wszystkie jego posty zostały usunięte."
 msgstr "User %(username)s and all their posts have been deleted."
 
-#: app/routes.py:533
+#: app/routes.py:644 app/routes.py:675 app/routes.py:831
+msgid "Nieprawidłowy formularz usuwania."
+msgstr "Invalid deletion form."
+
+#: app/routes.py:656 app/templates/admin/dashboard.html:19
+#: app/templates/admin/manage_posts.html:6
 msgid "Zarządzaj Postami"
 msgstr "Manage Posts"
 
-#: app/routes.py:557
-msgid "Turniej został pomyślnie utworzony!"
-msgstr "The tournament has been created successfully!"
+#: app/routes.py:673
+msgid "Post został usunięty."
+msgstr "The post has been deleted."
 
-#: app/routes.py:559
+#: app/routes.py:698 app/routes.py:714
 msgid "Nowy Turniej"
 msgstr "New Tournament"
 
-#: app/routes.py:570
+#: app/routes.py:712
+msgid "Turniej został pomyślnie utworzony!"
+msgstr "The tournament has been created successfully!"
+
+#: app/routes.py:729
 msgid "Zapis użytkownika został usunięty."
 msgstr "The user registration has been deleted."
 
-#: app/routes.py:594
+#: app/routes.py:771 app/templates/admin/dashboard.html:25
+#: app/templates/admin/manage_tournaments.html:6
 msgid "Zarządzaj Turniejami"
 msgstr "Manage Tournaments"
 
-#: app/routes.py:613
-msgid "Turniej został zaktualizowany!"
-msgstr "The tournament has been updated!"
-
-#: app/routes.py:622
+#: app/routes.py:796 app/routes.py:816
 msgid "Edytuj Turniej"
 msgstr "Edit Tournament"
 
-#: app/routes.py:633
+#: app/routes.py:806
+msgid "Turniej został zaktualizowany!"
+msgstr "The tournament has been updated!"
+
+#: app/routes.py:829
 msgid "Turniej został usunięty."
 msgstr "The tournament has been deleted."
 
-#: app/routes.py:653
+#: app/routes.py:852
 msgid "Zwycięzca został dodany!"
 msgstr "The winner has been added!"
 
-#: app/routes.py:657
+#: app/routes.py:858
 msgid "Zarządzaj Zwycięzcami"
 msgstr "Manage Winners"
 
-#: app/routes.py:669
+#: app/routes.py:873
 msgid "Wpis o zwycięzcy został usunięty."
 msgstr "The winner entry has been deleted."
 
@@ -462,471 +500,422 @@ msgstr "Previous"
 msgid "Następny"
 msgstr "Next"
 
-#: app/templates/base.html:63 app/templates/base.html:101
+#: app/templates/base.html:51 app/templates/base.html:95
 msgid "Strona główna"
 msgstr "Home"
 
-#: app/templates/base.html:65 app/templates/base.html:103
-msgid "Tournaments"
-msgstr "Tournaments"
+#: app/templates/base.html:52
+msgid "Aktualności"
+msgstr "News"
 
-#: app/templates/base.html:66 app/templates/base.html:104
-#: app/templates/base.html:159
-msgid "About Us"
-msgstr "About Us"
-
-#: app/templates/base.html:67 app/templates/base.html:105
-#: app/templates/base.html:160
-msgid "Kontakt"
-msgstr "Contact"
-
-#: app/templates/base.html:74 app/templates/base.html:118
-msgid "Admin Panel"
-msgstr "Admin Panel"
-
-#: app/templates/base.html:76 app/templates/base.html:120
+#: app/templates/base.html:62 app/templates/base.html:112
 msgid "Wyloguj się"
 msgstr "Logout"
 
-#: app/templates/base.html:78 app/templates/base.html:122
-msgid "Zaloguj się"
-msgstr "Login"
+#: app/templates/base.html:96
+msgid "Aktaulności"
+msgstr "News"
 
-#: app/templates/base.html:79 app/templates/base.html:123
-msgid "Zarejestruj się"
-msgstr "Register"
-
-#: app/templates/base.html:116
+#: app/templates/base.html:108
 msgid "Profil"
 msgstr "Profile"
 
-#: app/templates/base.html:161
-msgid "Privacy Policy"
+#: app/templates/base.html:119
+msgid "Polski"
+msgstr "Polish"
+
+#: app/templates/base.html:120
+msgid "English"
+msgstr "English"
+
+#: app/templates/base.html:148
+msgid "Indo-Polish Badminton"
+msgstr "Indo-Polish Badminton"
+
+#: app/templates/base.html:149
+msgid ""
+"Budowanie przyjaźni i zdrowej rywalizacji poprzez wspólną pasję do "
+"badmintona."
+msgstr ""
+"Fostering friendships and friendly rivalry through a shared passion for "
+"badminton."
+
+#: app/templates/base.html:156
+msgid "Partnerzy i sponsorzy"
+msgstr "Partners and sponsors"
+
+#: app/templates/base.html:157
+msgid "Polityka Prywatności"
 msgstr "Privacy Policy"
 
-#: app/templates/base.html:162
-msgid "Terms of Service"
+#: app/templates/base.html:158
+msgid "Warunki Usługi"
 msgstr "Terms of Service"
+
+#: app/templates/base.html:162
+msgid "Zaobserwuj nas"
+msgstr "Follow us"
 
 #: app/templates/contact.html:8
 msgid "Skontakuj się z nami"
 msgstr "Contact Us"
 
 #: app/templates/contact.html:9
-msgid "Masz pytanie? Zadawaj je śmiało"
-msgstr "Have questions? We would love to hear from you."
+msgid "Masz pytania? Chcesz dołączyć do naszej organizacji?"
+msgstr "Have questions? Want to join our organization?"
 
-#: app/templates/contact.html:16
-msgid "Infomracje kontaktowe"
+#: app/templates/contact.html:10
+msgid "Wypełnij formularz lub skorzystaj z danych poniżej."
+msgstr "Fill out the form or use the details below."
+
+#: app/templates/contact.html:17
+msgid "Informacje Kontaktowe"
 msgstr "Contact Information"
 
-#: app/templates/contact.html:20
+#: app/templates/contact.html:21
 msgid "Nazwa organizacji"
 msgstr "Organization Name"
 
-#: app/templates/contact.html:24
+#: app/templates/contact.html:25
 msgid "Adres"
 msgstr "Address"
 
-#: app/templates/contact.html:32
+#: app/templates/contact.html:29
+msgid "E-mail"
+msgstr "E-mail"
+
+#: app/templates/contact.html:33
 msgid "Telefon"
 msgstr "Phone"
 
-#: app/templates/contact.html:39
-msgid "Wyślij nam widomość"
+#: app/templates/contact.html:40
+msgid "Wyślij nam wiadomość"
 msgstr "Send us a message"
 
-#: app/templates/contact.html:45
-msgid "Twoje Imię"
+#: app/templates/contact.html:46
+msgid "Twoje Imie"
 msgstr "Your Name"
 
-#: app/templates/contact.html:50
-msgid "Twój Email"
-msgstr "Your Email"
+#: app/templates/contact.html:51
+msgid "Twój adres e-mail"
+msgstr "Your e-mail address"
 
-#: app/templates/contact.html:55
-msgid "Temat"
-msgstr "Subject"
-
-#: app/templates/contact.html:60
+#: app/templates/contact.html:61
 msgid "Twoja wiadomość"
-msgstr "Your Message"
+msgstr "Your message"
 
+#: app/templates/admin/manage_posts.html:49
 #: app/templates/admin/manage_tournaments.html:51
-#: app/templates/create_post.html:29 app/templates/post.html:45
+#: app/templates/admin/manage_users.html:53 app/templates/create_post.html:29
+#: app/templates/post.html:46
 msgid "Anuluj"
 msgstr "Cancel"
 
-#: app/templates/gallery.html:7
-msgid "Nasza Galeria"
-msgstr "Our Gallery"
-
-#: app/templates/gallery.html:8
-msgid "Zobacz nasze zdjęcia z wydarzeń i sesjami treningowych"
-msgstr "See photos from our events and training sessions."
-
-#: app/templates/gallery.html:40
-msgid "Gallery image"
-msgstr "Gallery image"
-
-#: app/templates/gallery.html:51
-msgid "Brak zdjęć w galerii."
-msgstr "No images in the gallery yet."
-
-#: app/templates/index.html:8
+#: app/templates/index.html:7
 msgid "Jedność poprzez sport"
 msgstr "Unity Through Sport"
 
-#: app/templates/index.html:9
+#: app/templates/index.html:8
 msgid ""
-"Connecting India and Poland on the badminton court. Discover our story, "
-"join our events."
+"Łączymy Ludzi na korcie badmintonowym. <br> Poznaj naszą historię, dołącz"
+" do naszych wydarzeń."
 msgstr ""
-"Connecting India and Poland on the badminton court. Discover our story, "
-"join our events."
+"Connecting People on the badminton court. <br> Discover our story, join "
+"our events."
 
 #: app/templates/index.html:10
-msgid "Join Us"
+msgid "Dołącz do nas"
 msgstr "Join Us"
 
 #: app/templates/index.html:18
-msgid "Latest News"
-msgstr "Latest News"
+msgid "Najnowsze Posty"
+msgstr "Latest Posts"
 
 #: app/templates/index.html:33 app/templates/news.html:24
-msgid "Read More"
-msgstr "Read More"
+msgid "Czytaj dalej"
+msgstr "Read more"
 
 #: app/templates/index.html:38 app/templates/news.html:29
-msgid "No posts to display."
-msgstr "No posts to display."
+msgid "Brak postów do wyświetlenia"
+msgstr "No posts to display"
 
-#: app/templates/index.html:58
-msgid "Upcoming Tournaments"
+#: app/templates/index.html:48 app/templates/tournaments.html:5
+msgid "Nadchodzące Turnieje"
 msgstr "Upcoming Tournaments"
 
-#: app/templates/index.html:71 app/templates/index.html:97
-msgid "Date"
+#: app/templates/index.html:61 app/templates/index.html:88
+msgid "Data"
 msgstr "Date"
 
-#: app/templates/index.html:71 app/templates/index.html:97
-msgid "Location"
-msgstr "Location"
+#: app/templates/index.html:64
+msgid "Szczegóły"
+msgstr "Details"
+
+#: app/templates/index.html:68
+msgid "Brak nadchodzących turniejów"
+msgstr "No upcoming tournaments"
 
 #: app/templates/index.html:74
-msgid "View & Register"
-msgstr "View & Register"
-
-#: app/templates/index.html:78
-msgid "No upcoming tournaments scheduled."
-msgstr "No upcoming tournaments scheduled."
-
-#: app/templates/index.html:84
-msgid "Past Events & Winners"
+msgid "Poprzednie Eventy i Zwycięzcy"
 msgstr "Past Events & Winners"
 
-#: app/templates/index.html:101 app/templates/tournament_details.html:22
-msgid "Winners"
+#: app/templates/index.html:92
+msgid "Zwycięzcy"
 msgstr "Winners"
 
-#: app/templates/index.html:111
-msgid "View Results"
-msgstr "View Results"
+#: app/templates/index.html:102 app/templates/tournaments.html:16
+msgid "Zobacz szczegóły"
+msgstr "View Details"
 
-#: app/templates/index.html:115
-msgid "No past events to show."
-msgstr "No past events to show."
+#: app/templates/index.html:106
+msgid "Brak poprzednich wydarzeń"
+msgstr "No past events"
 
 #: app/templates/login.html:7
-msgid "Sign in to your account"
+msgid "Zaloguj się do swojego konta"
 msgstr "Sign in to your account"
 
 #: app/templates/login.html:14
-msgid "Username or Email"
-msgstr "Username or Email"
-
-#: app/templates/login.html:18 app/templates/register.html:48
-msgid "Password"
-msgstr "Password"
+msgid "Nazwa użytkownika lub E-mail"
+msgstr "Username or E-mail"
 
 #: app/templates/login.html:29
-msgid "Forgot your password?"
+msgid "Zapomniałeś hasła?"
 msgstr "Forgot your password?"
 
 #: app/templates/login.html:39
-msgid "Don't have an account yet?"
+msgid "Nie masz jeszcze konta?"
 msgstr "Don't have an account yet?"
 
 #: app/templates/login.html:40
-msgid "Register here"
-msgstr "Register here"
+msgid "Zarejestruj się!"
+msgstr "Register!"
 
 #: app/templates/news.html:7
-msgid "All News"
-msgstr "All News"
+msgid "Wszystkie Posty"
+msgstr "All Posts"
 
 #: app/templates/news.html:8
-msgid "Browse all articles and updates from our association."
-msgstr "Browse all articles and updates from our association."
+msgid "Tu znajdziesz wszystkie nasze posty"
+msgstr "Here you will find all our posts"
 
 #: app/templates/post.html:14
-msgid "Published by"
-msgstr "Published by"
+msgid "Opublikowano przez: "
+msgstr "Published by: "
 
-#: app/templates/post.html:26
-msgid "Edit Post"
-msgstr "Edit Post"
-
-#: app/templates/post.html:27
-msgid "Delete Post"
+#: app/templates/post.html:28
+msgid "Usuń Post"
 msgstr "Delete Post"
 
-#: app/templates/admin/manage_tournaments.html:44 app/templates/post.html:38
-msgid "Confirm Deletion"
-msgstr "Confirm Deletion"
+#: app/templates/admin/manage_posts.html:42
+#: app/templates/admin/manage_users.html:46 app/templates/post.html:39
+msgid "Potwierdź usunięcie"
+msgstr "Confirm deletion"
 
-#: app/templates/post.html:42
-msgid "Are you sure you want to delete this post? This action cannot be undone."
+#: app/templates/post.html:43
+msgid "Czy na pewno chcesz usunąć post? Tej akcji nie można już cofnąć?"
 msgstr "Are you sure you want to delete this post? This action cannot be undone."
 
-#: app/templates/admin/manage_posts.html:34
-#: app/templates/admin/manage_tournaments.html:37
-#: app/templates/admin/manage_tournaments.html:53
-#: app/templates/admin/manage_winners.html:42 app/templates/post.html:47
-msgid "Delete"
-msgstr "Delete"
-
 #: app/templates/profile.html:24
-msgid "Update Personal Details"
-msgstr "Update Personal Details"
+msgid "Zaktualizuj swoje dane"
+msgstr "Update your details"
 
 #: app/templates/profile.html:42
-msgid "You can change your username again in"
+msgid "Możesz ponownie zmienić swóją nazwę użytkownika za"
 msgstr "You can change your username again in"
 
 #: app/templates/profile.html:42
-msgid "days"
+msgid "dni"
 msgstr "days"
 
-#: app/templates/profile.html:58
-msgid "Change Password"
-msgstr "Change Password"
-
 #: app/templates/register.html:7
-msgid "Create your account"
+msgid "Stwórz swoje konto"
 msgstr "Create your account"
 
-#: app/templates/register.html:16
-msgid "First Name"
-msgstr "First Name"
-
-#: app/templates/register.html:23
-msgid "Last Name"
-msgstr "Last Name"
-
-#: app/templates/admin/manage_users.html:13 app/templates/register.html:32
-msgid "Username"
-msgstr "Username"
-
-#: app/templates/email/reset_password.html:15 app/templates/register.html:40
-#: app/templates/reset_request.html:14
-msgid "Email Address"
+#: app/templates/register.html:40 app/templates/reset_request.html:14
+msgid "Adres Email"
 msgstr "Email Address"
 
 #: app/templates/register.html:56
-msgid "Confirm Password"
-msgstr "Confirm Password"
+msgid "Powtórz hasło"
+msgstr "Repeat password"
 
 #: app/templates/register.html:65
-msgid "Create Account"
+msgid "Stwórz Konto"
 msgstr "Create Account"
 
 #: app/templates/register.html:70
 msgid "Already have an account?"
 msgstr "Already have an account?"
 
-#: app/templates/register.html:71
-msgid "Sign In"
-msgstr "Sign In"
+#: app/templates/reset_request.html:8
+msgid "Podaj swój adres email a my wyślemy na niego link resetujący hasło."
+msgstr "Enter your email address and we will send a password reset link to it."
 
-#: app/templates/email/reset_password.html:8 app/templates/reset_request.html:7
-msgid "Reset Your Password"
-msgstr "Reset Your Password"
-
-#: app/templates/email/reset_password.html:9 app/templates/reset_request.html:8
-msgid ""
-"Enter your email address and we will send you a link to reset your "
-"password."
-msgstr ""
-"Enter your email address and we will send you a link to reset your "
-"password."
-
-#: app/templates/email/reset_password.html:21
 #: app/templates/reset_request.html:20
-msgid "Send Reset Link"
-msgstr "Send Reset Link"
+msgid "Wyślij link"
+msgstr "Send link"
 
-#: app/templates/email/reset_password.html:35 app/templates/reset_token.html:7
-msgid "Set a New Password"
-msgstr "Set a New Password"
+#: app/templates/reset_token.html:7
+msgid "Ustaw nowe hasło"
+msgstr "Set a new password"
 
-#: app/templates/email/reset_password.html:42 app/templates/reset_token.html:14
-msgid "New Password"
-msgstr "New Password"
+#: app/templates/reset_token.html:21
+msgid "Powtórz nowe hasło"
+msgstr "Repeat new password"
 
-#: app/templates/email/reset_password.html:49 app/templates/reset_token.html:21
-msgid "Confirm New Password"
-msgstr "Confirm New Password"
-
-#: app/templates/email/reset_password.html:56 app/templates/reset_token.html:28
-msgid "Reset Password"
-msgstr "Reset Password"
+#: app/templates/reset_token.html:28
+msgid "Resetuj hasło"
+msgstr "Reset password"
 
 #: app/templates/sponsors.html:7
-msgid "Our Sponsors & Partners"
-msgstr "Our Sponsors & Partners"
+msgid "Nasi sponsorzy i partnerzy"
+msgstr "Our sponsors and partners"
 
 #: app/templates/sponsors.html:8
 msgid ""
-"We are grateful for the support of our sponsors who help us promote "
-"badminton and connect communities."
+"Jesteśmy wdzięczni naszym sponsorom, którzy wspierają nas w promocji "
+"badmintona i budowaniu więzi w społecznościach."
 msgstr ""
-"We are grateful for the support of our sponsors who help us promote "
-"badminton and connect communities."
+"We are grateful to our sponsors who support us in promoting badminton and"
+" building community ties."
 
-#: app/templates/tournament_details.html:14
+#: app/templates/tournament_details.html:11
 msgid "Data:"
 msgstr "Date:"
 
-#: app/templates/tournament_details.html:43
+#: app/templates/tournament_details.html:22
 msgid "Jesteś zapisany na ten turniej."
 msgstr "You are registered for this tournament."
 
-#: app/templates/tournament_details.html:45
+#: app/templates/tournament_details.html:24
 msgid "Wypisz się"
 msgstr "Unregister"
 
-#: app/templates/tournament_details.html:48
+#: app/templates/tournament_details.html:27
 msgid "Brak wolnych miejsc."
 msgstr "No available spots."
 
-#: app/templates/tournament_details.html:51
+#: app/templates/tournament_details.html:30
 msgid "Zapisz się"
 msgstr "Register"
 
-#: app/templates/tournament_details.html:55
+#: app/templates/tournament_details.html:34
 msgid "Rejestracja na ten turniej została zakończona."
 msgstr "Registration for this tournament has closed."
 
-#: app/templates/tournament_details.html:60
+#: app/templates/tournament_details.html:39
 msgid "Zapisani gracze"
-msgstr "Registered Players"
+msgstr "Registered players"
 
-#: app/templates/tournament_details.html:67
-msgid "Usuń"
-msgstr "Delete"
-
-#: app/templates/tournament_details.html:72
+#: app/templates/tournament_details.html:56
 msgid "Nikt się jeszcze nie zapisał."
 msgstr "No one has registered yet."
 
-#: app/templates/tournament_details.html:78
+#: app/templates/tournament_details.html:62
 msgid "Pobierz listę w JSON"
 msgstr "Download list in JSON"
 
-#: app/templates/tournaments.html:5
-msgid "Nadchodzące Turnieje"
-msgstr "Upcoming Tournaments"
+#: app/templates/tournament_details.html:69
+msgid "Zwyciezcy"
+msgstr "Winners"
 
-#: app/templates/tournaments.html:15
-msgid "Zobacz szczegóły"
-msgstr "View Details"
-
-#: app/templates/tournaments.html:19
+#: app/templates/tournaments.html:20
 msgid "Brak nadchodzących turniejów."
 msgstr "No upcoming tournaments."
 
-#: app/templates/admin/dashboard.html:5
-msgid "Admin Dashboard"
-msgstr "Admin Dashboard"
+#: app/templates/admin/confirm_admin_toggle.html:9
+msgid "Wprowadź swoje hasło, aby potwierdzić zamiar"
+msgstr "Enter your password to confirm your intention"
+
+#: app/templates/admin/confirm_admin_toggle.html:9
+msgid "uprawnień administratora dla użytkownika"
+msgstr "of administrator rights for the user"
+
+#: app/templates/admin/confirm_admin_toggle.html:16
+msgid "Twoje hasło administratora"
+msgstr "Your administrator password"
 
 #: app/templates/admin/dashboard.html:12
-msgid "Total Users"
-msgstr "Total Users"
-
-#: app/templates/admin/dashboard.html:13
-#: app/templates/admin/manage_users.html:4
-msgid "Manage Users"
-msgstr "Manage Users"
+msgid "Liczba Użytkowników"
+msgstr "Number of Users"
 
 #: app/templates/admin/dashboard.html:18
-msgid "Total Posts"
-msgstr "Total Posts"
-
-#: app/templates/admin/dashboard.html:19
-#: app/templates/admin/manage_posts.html:6
-msgid "Manage Posts"
-msgstr "Manage Posts"
+msgid "Liczba Postów"
+msgstr "Number of Posts"
 
 #: app/templates/admin/dashboard.html:24
-msgid "Total Tournaments"
-msgstr "Total Tournaments"
-
-#: app/templates/admin/dashboard.html:25
-#: app/templates/admin/manage_tournaments.html:6
-msgid "Manage Tournaments"
-msgstr "Manage Tournaments"
+msgid "Liczba Turniejów"
+msgstr "Number of Tournaments"
 
 #: app/templates/admin/manage_posts.html:9
-msgid "Add Post"
+msgid "Dodaj Post"
 msgstr "Add Post"
 
-#: app/templates/admin/manage_posts.html:19
-#: app/templates/admin/manage_tournaments.html:20
-msgid "Title"
-msgstr "Title"
-
 #: app/templates/admin/manage_posts.html:20
-msgid "Author"
+msgid "Autor"
 msgstr "Author"
 
 #: app/templates/admin/manage_posts.html:21
-msgid "Date Published"
-msgstr "Date Published"
+msgid "Data opublikowania"
+msgstr "Date published"
 
 #: app/templates/admin/manage_posts.html:32
 #: app/templates/admin/manage_tournaments.html:34
-msgid "View"
+msgid "Zobacz"
 msgstr "View"
 
 #: app/templates/admin/manage_posts.html:33
 #: app/templates/admin/manage_tournaments.html:36
-msgid "Edit"
+msgid "Edytuj"
 msgstr "Edit"
 
+#: app/templates/admin/manage_posts.html:46
+msgid "Czy na pewno chcesz usunąć post?"
+msgstr "Are you sure you want to delete the post?"
+
+#: app/templates/admin/manage_posts.html:46
+#: app/templates/admin/manage_tournaments.html:48
+#: app/templates/admin/manage_users.html:50
+msgid "Tej akcji nie można cofnąć"
+msgstr "This action cannot be undone"
+
 #: app/templates/admin/manage_tournaments.html:9
-msgid "Add Tournament"
+msgid "Dodaj Turniej"
 msgstr "Add Tournament"
 
 #: app/templates/admin/manage_tournaments.html:21
-msgid "Start Date"
+msgid "Data Rozpoczęcia"
 msgstr "Start Date"
 
 #: app/templates/admin/manage_tournaments.html:22
-msgid "Registrations"
-msgstr "Registrations"
+msgid "Uczestnicy"
+msgstr "Participants"
 
 #: app/templates/admin/manage_tournaments.html:35
-msgid "Manage Winners"
+msgid "Zarządzaj Zwyciezcami"
 msgstr "Manage Winners"
 
-#: app/templates/admin/manage_tournaments.html:48
-msgid "Are you sure you want to delete the tournament"
-msgstr "Are you sure you want to delete the tournament"
+#: app/templates/admin/manage_tournaments.html:37
+#: app/templates/admin/manage_winners.html:42
+msgid "Delete"
+msgstr "Delete"
+
+#: app/templates/admin/manage_tournaments.html:44
+msgid "Potwierdź Usunięcie"
+msgstr "Confirm Deletion"
 
 #: app/templates/admin/manage_tournaments.html:48
-msgid "This action cannot be undone."
-msgstr "This action cannot be undone."
+msgid "Czy na pewno chcesz usunąć ten turniej?"
+msgstr "Are you sure you want to delete this tournament?"
+
+#: app/templates/admin/manage_users.html:4
+msgid "Manage Users"
+msgstr "Manage Users"
+
+#: app/templates/admin/manage_users.html:13
+msgid "Username"
+msgstr "Username"
 
 #: app/templates/admin/manage_users.html:15
 msgid "Full Name"
@@ -948,13 +937,17 @@ msgstr "Admin"
 msgid "User"
 msgstr "User"
 
-#: app/templates/admin/manage_users.html:37
+#: app/templates/admin/manage_users.html:36
 msgid "Toggle Admin"
 msgstr "Toggle Admin"
 
-#: app/templates/admin/manage_users.html:39
+#: app/templates/admin/manage_users.html:38
 msgid "Delete User"
 msgstr "Delete User"
+
+#: app/templates/admin/manage_users.html:50
+msgid "Czy na pewno chcesz usunąć użytkownika"
+msgstr "Are you sure you want to delete the user"
 
 #: app/templates/admin/manage_winners.html:5
 msgid "Manage Winners for"
@@ -1004,132 +997,9 @@ msgstr "Page not found."
 msgid ""
 "Strona, której szukasz, nie istnieje. Mogła zostać przeniesiona lub "
 "usunięta."
-msgstr "The page you are looking for does not exist. It might have been moved or deleted."
-
-
-#~ msgid "Skontaktuj się z nami"
-#~ msgstr "Contact us"
-
-#~ msgid ""
-#~ "Masz pytania? Chcesz dołączyć do naszej"
-#~ " organizacji? Wypełnij formularz lub "
-#~ "skorzystaj z danych poniżej."
-#~ msgstr ""
-#~ "Have questions? Want to join our "
-#~ "organization? Fill out the form or "
-#~ "use the details below."
-
-#~ msgid "Formularz kontaktowy w budowie."
-#~ msgstr "Contact form under construction."
-
-#~ msgid "Tytuł pierwszej aktualności"
-#~ msgstr "Title of the first news post"
-
-#~ msgid ""
-#~ "Krótki opis lub fragment artykułu. Można"
-#~ " tutaj umieścić najważniejsze informacje z"
-#~ " danego wydarzenia lub ogłoszenia."
-#~ msgstr ""
-#~ "A short description or excerpt from "
-#~ "the article. The most important "
-#~ "information from a given event or "
-#~ "announcement can be placed here."
-
-#~ msgid "Kolejne ważne ogłoszenie"
-#~ msgstr "Another important announcement"
-
-#~ msgid ""
-#~ "Tutaj pojawi się treść drugiego newsa."
-#~ " System można rozbudować o dynamiczne "
-#~ "pobieranie wpisów z bazy danych."
-#~ msgstr ""
-#~ "The content of the second news "
-#~ "post will appear here. The system "
-#~ "can be expanded to dynamically fetch "
-#~ "posts from the database."
-
-#~ msgid "Aktualności"
-#~ msgstr "News"
-
-#~ msgid "Sponsorzy"
-#~ msgstr "Sponsors"
-
-#~ msgid "Zarejestruj się"
-#~ msgstr "Register"
-
-#~ msgid "Wszelkie prawa zastrzeżone."
-#~ msgstr "All rights reserved."
-
-#~ msgid "Dane kontaktowe"
-#~ msgstr "Contact Details"
-
-#~ msgid "Nazwa organizacji"
-#~ msgstr "Organization Name"
-
-#~ msgid "Telefon"
-#~ msgstr "Phone"
-
-#~ msgid "Witaj na stronie naszej organizacji"
-#~ msgstr "Welcome to our organization's website"
-
-#~ msgid ""
-#~ "To jest strona główna, na której "
-#~ "będą pojawiać się najnowsze aktualności."
-#~ msgstr "This is the homepage where the latest news will appear."
-
-#~ msgid "Opublikowano przez"
-#~ msgstr "Published by"
-
-#~ msgid "dnia"
-#~ msgstr "on"
-
-#~ msgid "Czytaj więcej"
-#~ msgstr "Read more"
-
-#~ msgid "Brak postów do wyświetlenia."
-#~ msgstr "No posts to display."
-
-#~ msgid "Zaloguj się"
-#~ msgstr "Sign In"
-
-#~ msgid "Nie masz jeszcze konta?"
-#~ msgstr "Don't have an account yet?"
-
-#~ msgid "Potwierdź usunięcie"
-#~ msgstr "Confirm Deletion"
-
-#~ msgid "Czy na pewno chcesz usunąć ten post? Tej operacji nie można cofnąć."
-#~ msgstr ""
-#~ "Are you sure you want to delete"
-#~ " this post? This action cannot be "
-#~ "undone."
-
-#~ msgid "Anuluj"
-#~ msgstr "Cancel"
-
-#~ msgid "Dołącz już dziś!"
-#~ msgstr "Join Today!"
-
-#~ msgid "Hasło musi zawierać:"
-#~ msgstr "Password must contain:"
-
-#~ msgid "Od 4 do 24 znaków"
-#~ msgstr "From 4 to 24 characters"
-
-#~ msgid "Przynajmniej jedną małą literę"
-#~ msgstr "At least one lowercase letter"
-
-#~ msgid "Przynajmniej jedną dużą literę"
-#~ msgstr "At least one uppercase letter"
-
-#~ msgid "Przynajmniej jeden znak specjalny"
-#~ msgstr "At least one special character"
-
-#~ msgid "Masz już konto?"
-#~ msgstr "Already have an account?"
-
-#~ msgid "Serdecznie dziękujemy naszym sponsorom i partnerom za wsparcie."
-#~ msgstr "We sincerely thank our sponsors and partners for their support."
+msgstr ""
+"The page you are looking for does not exist. It might have been moved or "
+"deleted."
 
 #~ msgid "{editor}: Editing failed"
 #~ msgstr ""
@@ -1456,4 +1326,250 @@ msgstr "The page you are looking for does not exist. It might have been moved or
 
 #~ msgid "Not a valid float value."
 #~ msgstr ""
+
+#~ msgid "Konto z tym adresem email nie istnieje."
+#~ msgstr "An account with this email address does not exist."
+
+#~ msgid "Folder ze zdjęciami galerii nie został znaleziony."
+#~ msgstr "The gallery images folder was not found."
+
+#~ msgid "Galeria"
+#~ msgstr "Gallery"
+
+#~ msgid "Tournaments"
+#~ msgstr "Tournaments"
+
+#~ msgid "About Us"
+#~ msgstr "About Us"
+
+#~ msgid "Admin Panel"
+#~ msgstr "Admin Panel"
+
+#~ msgid "Privacy Policy"
+#~ msgstr "Privacy Policy"
+
+#~ msgid "Terms of Service"
+#~ msgstr "Terms of Service"
+
+#~ msgid "Masz pytanie? Zadawaj je śmiało"
+#~ msgstr "Have questions? We would love to hear from you."
+
+#~ msgid "Nasza Galeria"
+#~ msgstr "Our Gallery"
+
+#~ msgid "Zobacz nasze zdjęcia z wydarzeń i sesjami treningowych"
+#~ msgstr "See photos from our events and training sessions."
+
+#~ msgid "Gallery image"
+#~ msgstr "Gallery image"
+
+#~ msgid "Brak zdjęć w galerii."
+#~ msgstr "No images in the gallery yet."
+
+#~ msgid ""
+#~ "Connecting India and Poland on the "
+#~ "badminton court. Discover our story, "
+#~ "join our events."
+#~ msgstr ""
+#~ "Connecting India and Poland on the "
+#~ "badminton court. Discover our story, "
+#~ "join our events."
+
+#~ msgid "Join Us"
+#~ msgstr "Join Us"
+
+#~ msgid "Latest News"
+#~ msgstr "Latest News"
+
+#~ msgid "Read More"
+#~ msgstr "Read More"
+
+#~ msgid "No posts to display."
+#~ msgstr "No posts to display."
+
+#~ msgid "Upcoming Tournaments"
+#~ msgstr "Upcoming Tournaments"
+
+#~ msgid "Date"
+#~ msgstr "Date"
+
+#~ msgid "Location"
+#~ msgstr "Location"
+
+#~ msgid "View & Register"
+#~ msgstr "View & Register"
+
+#~ msgid "No upcoming tournaments scheduled."
+#~ msgstr "No upcoming tournaments scheduled."
+
+#~ msgid "Past Events & Winners"
+#~ msgstr "Past Events & Winners"
+
+#~ msgid "Winners"
+#~ msgstr "Winners"
+
+#~ msgid "View Results"
+#~ msgstr "View Results"
+
+#~ msgid "No past events to show."
+#~ msgstr "No past events to show."
+
+#~ msgid "Sign in to your account"
+#~ msgstr "Sign in to your account"
+
+#~ msgid "Username or Email"
+#~ msgstr "Username or Email"
+
+#~ msgid "Password"
+#~ msgstr "Password"
+
+#~ msgid "Forgot your password?"
+#~ msgstr "Forgot your password?"
+
+#~ msgid "Don't have an account yet?"
+#~ msgstr "Don't have an account yet?"
+
+#~ msgid "Register here"
+#~ msgstr "Register here"
+
+#~ msgid "Browse all articles and updates from our association."
+#~ msgstr "Browse all articles and updates from our association."
+
+#~ msgid "Published by"
+#~ msgstr "Published by"
+
+#~ msgid "Edit Post"
+#~ msgstr "Edit Post"
+
+#~ msgid "Delete Post"
+#~ msgstr "Delete Post"
+
+#~ msgid "Confirm Deletion"
+#~ msgstr "Confirm Deletion"
+
+#~ msgid ""
+#~ "Are you sure you want to delete"
+#~ " this post? This action cannot be "
+#~ "undone."
+#~ msgstr ""
+#~ "Are you sure you want to delete"
+#~ " this post? This action cannot be "
+#~ "undone."
+
+#~ msgid "Update Personal Details"
+#~ msgstr "Update Personal Details"
+
+#~ msgid "You can change your username again in"
+#~ msgstr "You can change your username again in"
+
+#~ msgid "days"
+#~ msgstr "days"
+
+#~ msgid "Change Password"
+#~ msgstr "Change Password"
+
+#~ msgid "Create your account"
+#~ msgstr "Create your account"
+
+#~ msgid "First Name"
+#~ msgstr "First Name"
+
+#~ msgid "Last Name"
+#~ msgstr "Last Name"
+
+#~ msgid "Email Address"
+#~ msgstr "Email Address"
+
+#~ msgid "Confirm Password"
+#~ msgstr "Confirm Password"
+
+#~ msgid "Create Account"
+#~ msgstr "Create Account"
+
+#~ msgid "Sign In"
+#~ msgstr "Sign In"
+
+#~ msgid "Reset Your Password"
+#~ msgstr "Reset Your Password"
+
+#~ msgid ""
+#~ "Enter your email address and we "
+#~ "will send you a link to reset "
+#~ "your password."
+#~ msgstr ""
+#~ "Enter your email address and we "
+#~ "will send you a link to reset "
+#~ "your password."
+
+#~ msgid "Send Reset Link"
+#~ msgstr "Send Reset Link"
+
+#~ msgid "Set a New Password"
+#~ msgstr "Set a New Password"
+
+#~ msgid "New Password"
+#~ msgstr "New Password"
+
+#~ msgid "Confirm New Password"
+#~ msgstr "Confirm New Password"
+
+#~ msgid "Reset Password"
+#~ msgstr "Reset Password"
+
+#~ msgid ""
+#~ "We are grateful for the support of"
+#~ " our sponsors who help us promote "
+#~ "badminton and connect communities."
+#~ msgstr ""
+#~ "We are grateful for the support of"
+#~ " our sponsors who help us promote "
+#~ "badminton and connect communities."
+
+#~ msgid "Admin Dashboard"
+#~ msgstr "Admin Dashboard"
+
+#~ msgid "Total Users"
+#~ msgstr "Total Users"
+
+#~ msgid "Manage Posts"
+#~ msgstr "Manage Posts"
+
+#~ msgid "Total Tournaments"
+#~ msgstr "Total Tournaments"
+
+#~ msgid "Manage Tournaments"
+#~ msgstr "Manage Tournaments"
+
+#~ msgid "Add Post"
+#~ msgstr "Add Post"
+
+#~ msgid "Title"
+#~ msgstr "Title"
+
+#~ msgid "Date Published"
+#~ msgstr "Date Published"
+
+#~ msgid "View"
+#~ msgstr "View"
+
+#~ msgid "Edit"
+#~ msgstr "Edit"
+
+#~ msgid "Add Tournament"
+#~ msgstr "Add Tournament"
+
+#~ msgid "Start Date"
+#~ msgstr "Start Date"
+
+#~ msgid "Registrations"
+#~ msgstr "Registrations"
+
+#~ msgid "Manage Winners"
+#~ msgstr "Manage Winners"
+
+#~ msgid "Are you sure you want to delete the tournament"
+#~ msgstr "Are you sure you want to delete the tournament"
+
+#~ msgid "This action cannot be undone."
+#~ msgstr "This action cannot be undone."
 

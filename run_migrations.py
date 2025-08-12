@@ -1,5 +1,5 @@
 from flask_migrate import upgrade
-from app import app, db
+from app import app
 
 print("--- [MIGRATION SCRIPT] Rozpoczynam migrację bazy danych ---")
 

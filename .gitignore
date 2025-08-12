@@ -153,3 +153,12 @@ logs/
 docs/_build/
 site/
 
+# -------------------------------------------------------------------------------------
+# Node.js / NPM
+#
+# Frontend dependencies managed by npm/yarn.
+# -------------------------------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

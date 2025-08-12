@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="flex min-h-[80vh] items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="w-full max-w-md space-y-8">
+        <div>
+            <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">{{ _('Stwórz swoje konto') }}</h2>
+        </div>
+        <form class="mt-8 space-y-6 rounded-lg bg-white p-8 shadow-lg" method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div class="space-y-4 rounded-md">
+                
+                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <div>
+                        {{ form.first_name.label(class="sr-only") }}
+                        {{ form.first_name(class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-[var(--c-brand-primary)] focus:outline-none focus:ring-[var(--c-brand-primary)] sm:text-sm", placeholder=_('Imię')) }}
+                        {% for error in form.first_name.errors %}
+                            <p class="mt-2 text-xs text-red-600">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                    <div>
+                        {{ form.last_name.label(class="sr-only") }}
+                        {{ form.last_name(class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-[var(--c-brand-primary)] focus:outline-none focus:ring-[var(--c-brand-primary)] sm:text-sm", placeholder=_('Nazwisko')) }}
+                        {% for error in form.last_name.errors %}
+                            <p class="mt-2 text-xs text-red-600">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div>
+                    {{ form.username.label(class="sr-only") }}
+                    {{ form.username(class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-[var(--c-brand-primary)] focus:outline-none focus:ring-[var(--c-brand-primary)] sm:text-sm", placeholder=_('Nazwa użytkownika')) }}
+                    {% for error in form.username.errors %}
+                        <p class="mt-2 text-xs text-red-600">{{ error }}</p>
+                    {% endfor %}
+                </div>
+                
+                <div>
+                    {{ form.email.label(class="sr-only") }}
+                    {{ form.email(class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-[var(--c-brand-primary)] focus:outline-none focus:ring-[var(--c-brand-primary)] sm:text-sm", placeholder=_('Adres Email')) }}
+                    {% for error in form.email.errors %}
+                        <p class="mt-2 text-xs text-red-600">{{ error }}</p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    {{ form.password.label(class="sr-only") }}
+                    {{ form.password(class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-[var(--c-brand-primary)] focus:outline-none focus:ring-[var(--c-brand-primary)] sm:text-sm", placeholder=_('Hasło')) }}
+                    {% for error in form.password.errors %}
+                        <p class="mt-2 text-xs text-red-600">{{ error }}</p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    {{ form.confirm_password.label(class="sr-only") }}
+                    {{ form.confirm_password(class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-[var(--c-brand-primary)] focus:outline-none focus:ring-[var(--c-brand-primary)] sm:text-sm", placeholder=_('Powtórz hasło')) }}
+                    {% for error in form.confirm_password.errors %}
+                        <p class="mt-2 text-xs text-red-600">{{ error }}</p>
+                    {% endfor %}
+                </div>
+
+            </div>
+
+            <div>
+                {{ form.submit(value=_('Stwórz Konto'), class="group relative flex w-full justify-center rounded-md border border-transparent bg-[var(--c-brand-primary)] py-2 px-4 text-sm font-medium text-white hover:bg-[var(--c-brand-primary)]/90 focus:outline-none focus:ring-2 focus:ring-[var(--c-brand-primary)] focus:ring-offset-2") }}
+            </div>
+        </form>
+        <div class="text-center text-sm text-gray-600">
+            <p>
+                {{ _("Already have an account?") }}
+                <a href="{{ url_for('logowanie') }}" class="font-medium text-[var(--c-brand-primary)] hover:text-[var(--c-brand-secondary)]">{{ _('Zaloguj się') }}</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

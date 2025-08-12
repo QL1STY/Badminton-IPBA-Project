@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
+        <!-- User Info Card -->
+        <div class="md:col-span-1">
+            <div class="rounded-lg bg-white p-6 text-center shadow-lg">
+                <div class="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-gray-200 text-gray-500">
+                    <i class="fa-solid fa-user fa-3x"></i>
+                </div>
+                <h2 class="text-xl font-bold text-gray-900">{{ current_user.first_name }} {{ current_user.last_name }}</h2>
+                <p class="text-sm text-gray-500">{{ current_user.username }}</p>
+                <p class="mt-1 text-sm text-gray-500">{{ current_user.email }}</p>
+            </div>
+        </div>
+
+        <!-- Forms Card -->
+        <div class="space-y-10 md:col-span-2">
+            <!-- Update Details Form -->
+            <div class="rounded-lg bg-white p-8 shadow-lg">
+                <form method="POST" action="">
+                    {{ update_form.hidden_tag() }}
+                    <h3 class="text-2xl font-bold text-gray-900">{{ _('Zaktualizuj swoje dane') }}</h3>
+                    <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+                        <div class="sm:col-span-3">
+                            {{ update_form.first_name.label(class="block text-sm font-medium text-gray-700") }}
+                            {{ update_form.first_name(class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[var(--c-brand-primary)] focus:ring-[var(--c-brand-primary)] sm:text-sm") }}
+                        </div>
+                        <div class="sm:col-span-3">
+                            {{ update_form.last_name.label(class="block text-sm font-medium text-gray-700") }}
+                            {{ update_form.last_name(class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[var(--c-brand-primary)] focus:ring-[var(--c-brand-primary)] sm:text-sm") }}
+                        </div>
+                        <div class="sm:col-span-6">
+                            {{ update_form.username.label(class="block text-sm font-medium text-gray-700") }}
+                            {% if current_user.can_change_username() %}
+                                {{ update_form.username(class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[var(--c-brand-primary)] focus:ring-[var(--c-brand-primary)] sm:text-sm") }}
+                            {% else %}
+                                {{ update_form.username(class="mt-1 block w-full rounded-md border-gray-300 bg-gray-100 shadow-sm sm:text-sm", readonly=True) }}
+                                <p class="mt-2 text-sm text-gray-500">
+                                    {% if days_left and days_left > 0 %}
+                                        {{ _('Możesz ponownie zmienić swóją nazwę użytkownika za') }} {{ days_left }} {{ _('dni') }}.
+                                    {% endif %}
+                                </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        {{ update_form.submit_details(class="w-full justify-center rounded-md border border-transparent bg-[var(--c-brand-primary)] py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-[var(--c-brand-primary)]/90 focus:outline-none focus:ring-2 focus:ring-[var(--c-brand-primary)] focus:ring-offset-2") }}
+                    </div>
+                </form>
+            </div>
+
+            <!-- Change Password Form -->
+            <div class="rounded-lg bg-white p-8 shadow-lg">
+                <form method="POST" action="">
+                    {{ password_form.hidden_tag() }}
+                    <h3 class="text-2xl font-bold text-gray-900">{{ _('Zmień hasło') }}</h3>
+                    <div class="mt-6 space-y-6">
+                        <div>
+                            {{ password_form.old_password.label(class="block text-sm font-medium text-gray-700") }}
+                            {{ password_form.old_password(class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[var(--c-brand-primary)] focus:ring-[var(--c-brand-primary)] sm:text-sm") }}
+                        </div>
+                        <div>
+                            {{ password_form.new_password.label(class="block text-sm font-medium text-gray-700") }}
+                            {{ password_form.new_password(class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[var(--c-brand-primary)] focus:ring-[var(--c-brand-primary)] sm:text-sm") }}
+                        </div>
+                        <div>
+                            {{ password_form.confirm_password.label(class="block text-sm font-medium text-gray-700") }}
+                            {{ password_form.confirm_password(class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[var(--c-brand-primary)] focus:ring-[var(--c-brand-primary)] sm:text-sm") }}
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        {{ password_form.submit_password(class="w-full justify-center rounded-md border border-transparent bg-gray-700 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2") }}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

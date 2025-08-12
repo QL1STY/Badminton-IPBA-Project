@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="py-16 sm:py-24">
+    <div class="container mx-auto px-6 lg:px-8">
+        <div class="mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ _('Nasi sponsorzy i partnerzy') }}</h2>
+            <p class="mt-4 text-lg leading-8 text-gray-600">{{ _('Jesteśmy wdzięczni naszym sponsorom, którzy wspierają nas w promocji badmintona i budowaniu więzi w społecznościach.') }}</p>
+            <div class="mx-auto mt-6 h-1 w-24 rounded bg-[var(--c-brand-primary)]"></div>
+        </div>
+        <div class="mx-auto mt-16 grid max-w-lg grid-cols-2 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-3 sm:gap-y-14 lg:mx-0 lg:max-w-none">
+            <!-- Sponsor Logos -->
+            <img class="col-span-1 max-h-16 w-full object-contain lg:col-span-1" src="https://placehold.co/200x100/f0f0f0/333?text=Sponsor+1" alt="Sponsor 1" width="158" height="48">
+            <img class="col-span-1 max-h-16 w-full object-contain lg:col-span-1" src="https://placehold.co/200x100/f0f0f0/333?text=Sponsor+2" alt="Sponsor 2" width="158" height="48">
+            <img class="col-span-1 max-h-16 w-full object-contain lg:col-span-1" src="https://placehold.co/200x100/f0f0f0/333?text=Partner+A" alt="Partner A" width="158" height="48">
+            <img class="col-span-1 max-h-16 w-full object-contain sm:col-start-auto lg:col-span-1" src="https://placehold.co/200x100/f0f0f0/333?text=Sponsor+3" alt="Sponsor 3" width="158" height="48">
+            <img class="col-span-1 max-h-16 w-full object-contain lg:col-span-1" src="https://placehold.co/200x100/f0f0f0/333?text=Partner+B" alt="Partner B" width="158" height="48">
+            <img class="col-span-1 max-h-16 w-full object-contain lg:col-span-1" src="https://placehold.co/200x100/f0f0f0/333?text=Funding+Body" alt="Funding Body" width="158" height="48">
+        </div>
+    </div>
+</div>
+{% endblock %}

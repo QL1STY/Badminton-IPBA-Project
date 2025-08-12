@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="{{ session.get('language', 'pl') }}">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>{{ title }} - Indo-Polish Badminton Association</title>
+    
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet"/>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <style>
+      :root {
+        --c-white: #ffffff;
+        --c-black: #000000;
+        --c-red: #d94141;
+        --c-orange: #f56565;
+        --c-green: #38a169;
+        --c-brand-primary: #ff6d00;
+        --c-brand-secondary: #dc2626;
+      }
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .polish-flag-gradient {
+        background: linear-gradient(to top, var(--c-red) 50%, var(--c-white) 50%);
+      }
+    </style>
+    <link rel="icon" href="{{ url_for('static', filename='images/IPBA Logo  Final.png') }}">
+
+</head>
+<body class="bg-gray-100 text-gray-800">
+    
+<div class="flex min-h-screen flex-col">
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto flex items-center justify-between px-6 py-4">
+            <div class="flex-shrink-0">
+                <a href="{{ url_for('index') }}" class="flex items-center gap-3">
+                    <img src="{{ url_for('static', filename='images/IPBA Logo  Final.png') }}" alt="Logo" class="h-14 w-14">
+                    <span class="text-xl font-bold tracking-tight text-gray-900 hidden sm:inline">Indo-Polish Badminton</span>
+                </a>
+            </div>
+            
+            <nav class="hidden items-center gap-8 md:flex">
+                <a class="text-sm font-semibold text-gray-600 transition hover:text-[var(--c-brand-primary)]" href="{{ url_for('index') }}">{{ _('Strona główna') }}</a>
+                <a class="text-sm font-semibold text-gray-600 transition hover:text-[var(--c-brand-primary)]" href="{{ url_for('news') }}">{{ _('Aktualności') }}</a>
+                <a class="text-sm font-semibold text-gray-600 transition hover:text-[var(--c-brand-primary)]" href="{{ url_for('tournaments') }}">{{ _('Turnieje') }}</a>
+            </nav>
+
+            <div class="hidden items-center gap-4 md:flex">
+                {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('profil') }}" class="text-sm font-semibold text-gray-600 transition hover:text-[var(--c-brand-primary)]">{{ current_user.username }}</a>
+                    {% if current_user.is_admin %}
+                        <a href="{{ url_for('admin_dashboard') }}" class="text-sm text-gray-600 transition hover:text-[var(--c-brand-primary)]" title="{{_('Panel Administratora')}}"><i class="fa-solid fa-user-shield"></i></a>
+                    {% endif %}
+                    <a href="{{ url_for('wyloguj') }}" class="text-sm font-semibold text-gray-600 transition hover:text-[var(--c-brand-primary)]">{{ _('Wyloguj się') }}</a>
+                {% else %}
+                    <a href="{{ url_for('logowanie') }}" class="text-sm font-semibold text-gray-600 transition hover:text-[var(--c-brand-primary)]">{{ _('Zaloguj się') }}</a>
+                    <a href="{{ url_for('rejestracja') }}" class="rounded-md bg-[var(--c-brand-primary)] px-4 py-2 text-sm font-bold text-white transition hover:bg-[var(--c-brand-primary)]/90">{{ _('Zarejestruj się') }}</a>
+                {% endif %}
+                <div class="h-6 w-px bg-gray-300"></div>
+                <a href="{{ url_for('change_language', lang='pl') }}" title="Zmień na polski">
+                    <div class="h-5 w-8 rounded-sm polish-flag-gradient border border-gray-300"></div>
+                </a>
+                <a href="{{ url_for('change_language', lang='en') }}" title="Switch to English">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 60 36"
+                      class="h-5 w-8 border border-gray-300"
+                    >
+                      <rect width="60" height="36" fill="white" />
+                      <rect x="25" width="10" height="38" fill="#CF142B" />
+                      <rect y="13" width="60" height="10" fill="#CF142B" />
+                    </svg>         
+                </a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-200">
+                <a class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[var(--c-brand-primary)]" href="{{ url_for('index') }}">{{ _('Strona główna') }}</a>
+                <a class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[var(--c-brand-primary)]" href="{{ url_for('news') }}">{{ _('Aktaulności') }}</a>
+                <a class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[var(--c-brand-primary)]" href="{{ url_for('tournaments') }}">{{ _('Turnieje') }}</a>
+            </div>
+            <div class="border-t border-gray-200 pt-4 pb-3">
+                <div class="px-5">
+                    {% if current_user.is_authenticated %}
+                        <div class="font-medium text-base text-gray-800">{{ current_user.username }}</div>
+                        <div class="font-medium text-sm text-gray-500">{{ current_user.email }}</div>
+                    {% endif %}
+                </div>
+                <div class="mt-3 space-y-1 px-2">
+                    {% if current_user.is_authenticated %}
+                        <a href="{{ url_for('profil') }}" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[var(--c-brand-primary)]">{{ _('Profil') }}</a>
+                        {% if current_user.is_admin %}
+                            <a href="{{ url_for('admin_dashboard') }}" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[var(--c-brand-primary)]">{{_('Panel Administratora')}}</a>
+                        {% endif %}
+                        <a href="{{ url_for('wyloguj') }}" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[var(--c-brand-primary)]">{{ _('Wyloguj się') }}</a>
+                    {% else %}
+                        <a href="{{ url_for('logowanie') }}" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[var(--c-brand-primary)]">{{ _('Zaloguj się') }}</a>
+                        <a href="{{ url_for('rejestracja') }}" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[var(--c-brand-primary)]">{{ _('Zarejestruj się') }}</a>
+                    {% endif %}
+                </div>
+                <div class="mt-3 space-y-1 px-2">
+                    <a href="{{ url_for('change_language', lang='pl') }}" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[var(--c-brand-primary)]">{{ _('Polski') }}</a>
+                    <a href="{{ url_for('change_language', lang='en') }}" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[var(--c-brand-primary)]">{{ _('English') }}</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div id="flash-container" class="fixed top-24 left-1/2 -translate-x-1/2 z-[100] w-full max-w-xl px-4">
+                    {% for category, message in messages %}
+                        <div class="flash-message flex items-center justify-between rounded-md p-4 mb-2 shadow-lg {{ 'bg-green-100 text-green-800' if category == 'success' else 'bg-red-100 text-red-800' }}" role="alert">
+                            <p class="font-bold">{{ message }}</p>
+                            <button type="button" class="close-flash ml-4 text-xl font-semibold leading-none opacity-50 hover:opacity-100">
+                                &times;
+                            </button>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid gap-8 md:grid-cols-3">
+                <div>
+                    <h3 class="text-lg font-bold">Indo-Polish Badminton</h3>
+                    <p class="mt-4 text-gray-400">Budowanie przyjaźni i zdrowej rywalizacji poprzez wspólną pasję do badmintona.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold">Quick Links</h3>
+                    <ul class="mt-4 space-y-2"> 
+                        <li><a class="text-gray-400 hover:text-white" href="{{ url_for('regulamin') }}">{{_('Regulamin')}}</a></li> 
+                        <li><a class="text-gray-400 hover:text-white" href="{{ url_for('kontakt') }}">{{_('Kontakt')}}</a></li> 
+                        <li><a class="text-gray-400 hover:text-white" href="{{ url_for('sponsorzy') }}">{{_('Partnerzy i sponsorzy')}}</a></li> 
+                        <li><a class="text-gray-400 hover:text-white" href="#">{{_('Polityka Prywatności')}}</a></li> 
+                        <li><a class="text-gray-400 hover:text-white" href="#">{{_('Warunki Usługi')}}</a></li> 
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold">Zaobserwuj nas</h3>
+                    <div class="mt-4 flex space-x-4">
+                        <a class="text-gray-400 hover:text-white" href="#"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.59 0 0 .59 0 1.325v21.35C0 23.41.59 24 1.325 24H12.82v-9.29H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.735 0 1.325-.59 1.325-1.325V1.325C24 .59 23.41 0 22.675 0z"></path></svg></a>
+                        <a class="text-gray-400 hover:text-white" href="#"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.223.085c.645 1.956 2.52 3.375 4.738 3.417-1.94 1.5-4.37 2.39-6.99 2.39a11.75 11.75 0 01-1.336-.079 13.95 13.95 0 007.557 2.209c9.054 0 14.01-7.502 14.01-14.013 0-.213-.005-.426-.015-.637a10.02 10.02 0 002.46-2.548z"></path></svg></a>
+                        <a class="text-gray-400 hover:text-white" href="#"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.667 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.667-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.552 0-3.929.016-5.297.077-2.827.129-4.143 1.442-4.272 4.272-.062 1.368-.077 1.745-.077 5.298s.016 3.929.077 5.297c.13 2.83 1.445 4.143 4.272 4.272 1.368.062 1.745.077 5.297.077s3.929-.016 5.297-.077c2.827-.129 4.143-1.442 4.272-4.272.062-1.368.077-1.745.077-5.298s-.016-3.929-.077-5.297c-.13-2.83-1.445-4.143-4.272-4.272-1.368-.062-1.745-.077-5.297-.077z"></path><path d="M12 6.848c-2.841 0-5.152 2.311-5.152 5.152s2.311 5.152 5.152 5.152 5.152-2.311 5.152-5.152S14.841 6.848 12 6.848zm0 8.502c-1.854 0-3.352-1.498-3.352-3.352s1.498-3.352 3.352-3.352 3.352 1.498 3.352 3.352-1.498 3.352-3.352 3.352z"></path><circle cx="16.949" cy="7.052" r="1.25"></circle></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-800 pt-8 text-center text-gray-500">
+                <p>&copy; 2025 Indo-Polish Badminton Association. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Logika dla menu mobilnego
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    }
+
+    // Logika dla powiadomień flash
+    const flashMessages = document.querySelectorAll('.flash-message');
+    flashMessages.forEach(function(flashMessage) {
+        function closeFlash() {
+            flashMessage.style.opacity = '0';
+            setTimeout(() => flashMessage.remove(), 500);
+        }
+        const autoCloseTimer = setTimeout(closeFlash, 5000);
+        const closeButton = flashMessage.querySelector('.close-flash');
+        if (closeButton) {
+            closeButton.addEventListener('click', () => {
+                clearTimeout(autoCloseTimer);
+                closeFlash();
+            });
+        }
+    });
+});
+</script>
+{% endblock %}
+
+</body>
+</html>

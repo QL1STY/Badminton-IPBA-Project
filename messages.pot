@@ -1,0 +1,1001 @@
+# Translations template for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-08-11 19:45+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: app/__init__.py:57
+msgid "Proszę się zalogować, aby uzyskać dostęp do tej strony."
+msgstr ""
+
+#: app/forms.py:24
+msgid "Miejsce"
+msgstr ""
+
+#: app/forms.py:26
+msgid "Użytkownik"
+msgstr ""
+
+#: app/forms.py:27
+msgid "Dodaj zwycięzcę"
+msgstr ""
+
+#: app/forms.py:32
+msgid "Nazwa użytkownika zawiera niedozwolone słowa."
+msgstr ""
+
+#: app/forms.py:38
+msgid "Hasło musi mieć od 4 do 24 znaków."
+msgstr ""
+
+#: app/forms.py:40
+msgid "Musi zawierać małą literę."
+msgstr ""
+
+#: app/forms.py:42
+msgid "Musi zawierać dużą literę."
+msgstr ""
+
+#: app/forms.py:44
+msgid "Musi zawierać znak specjalny."
+msgstr ""
+
+#: app/forms.py:51 app/forms.py:107
+msgid "Imię"
+msgstr ""
+
+#: app/forms.py:52 app/forms.py:109
+msgid "Nazwisko"
+msgstr ""
+
+#: app/forms.py:53 app/forms.py:111
+msgid "Nazwa użytkownika"
+msgstr ""
+
+#: app/forms.py:55 app/forms.py:93 app/templates/contact.html:28
+msgid "Email"
+msgstr ""
+
+#: app/forms.py:56
+msgid "Niepoprawny format adresu email."
+msgstr ""
+
+#: app/forms.py:57 app/forms.py:75
+msgid "Hasło"
+msgstr ""
+
+#: app/forms.py:58
+msgid "Potwierdź hasło"
+msgstr ""
+
+#: app/forms.py:59 app/forms.py:103 app/forms.py:129
+msgid "Hasła muszą być identyczne."
+msgstr ""
+
+#: app/forms.py:60
+msgid "Zarejestruj się"
+msgstr ""
+
+#: app/forms.py:65 app/forms.py:122
+msgid "Ta nazwa użytkownika jest już zajęta. Proszę wybrać inną."
+msgstr ""
+
+#: app/forms.py:70
+msgid "Ten adres email jest już zajęty. Proszę wybrać inny."
+msgstr ""
+
+#: app/forms.py:73
+msgid "Nazwa użytkownika lub Email"
+msgstr ""
+
+#: app/forms.py:76
+msgid "Zapamiętaj mnie"
+msgstr ""
+
+#: app/forms.py:77
+msgid "Zaloguj się"
+msgstr ""
+
+#: app/forms.py:80
+msgid "Tytuł"
+msgstr ""
+
+#: app/forms.py:81
+msgid "Treść"
+msgstr ""
+
+#: app/forms.py:82
+msgid "Zdjęcie nagłówkowe (baner)"
+msgstr ""
+
+#: app/forms.py:83
+msgid "Opublikuj"
+msgstr ""
+
+#: app/forms.py:86
+msgid "Twoje Imię"
+msgstr ""
+
+#: app/forms.py:87
+msgid "Twój Email"
+msgstr ""
+
+#: app/forms.py:88
+msgid "Temat"
+msgstr ""
+
+#: app/forms.py:89
+msgid "Wiadomość"
+msgstr ""
+
+#: app/forms.py:90
+msgid "Wyślij"
+msgstr ""
+
+#: app/forms.py:94
+msgid "Poproś o reset hasła"
+msgstr ""
+
+#: app/forms.py:99
+msgid "Konto z tym adresem email nie istnieje."
+msgstr ""
+
+#: app/forms.py:102 app/forms.py:126
+msgid "Nowe hasło"
+msgstr ""
+
+#: app/forms.py:103 app/forms.py:128
+msgid "Potwierdź nowe hasło"
+msgstr ""
+
+#: app/forms.py:104
+msgid "Zresetuj hasło"
+msgstr ""
+
+#: app/forms.py:113
+msgid "Zaktualizuj dane"
+msgstr ""
+
+#: app/forms.py:125
+msgid "Stare hasło"
+msgstr ""
+
+#: app/forms.py:130
+msgid "Zmień hasło"
+msgstr ""
+
+#: app/forms.py:134
+msgid "Tytuł turnieju"
+msgstr ""
+
+#: app/forms.py:135
+msgid "Opis turnieju"
+msgstr ""
+
+#: app/forms.py:136
+msgid "Baner turnieju"
+msgstr ""
+
+#: app/forms.py:138
+msgid "Lokalizacja"
+msgstr ""
+
+#: app/forms.py:139
+msgid "Data rozpoczęcia"
+msgstr ""
+
+#: app/forms.py:140
+msgid "Data zakończenia (opcjonalnie)"
+msgstr ""
+
+#: app/forms.py:141
+msgid "Maksymalna liczba graczy"
+msgstr ""
+
+#: app/forms.py:142
+msgid "Zapisz turniej"
+msgstr ""
+
+#: app/routes.py:69
+msgid "Strona Główna"
+msgstr ""
+
+#: app/routes.py:95
+msgid "Konto zostało utworzone! Link weryfikacyjny został wysłany na Twój email."
+msgstr ""
+
+#: app/routes.py:97 app/templates/tournament_details.html:39
+msgid "Rejestracja"
+msgstr ""
+
+#: app/routes.py:105
+msgid "Twoje konto jest już zweryfikowane."
+msgstr ""
+
+#: app/routes.py:109
+msgid "Twój email został pomyślnie zweryfikowany! Możesz się teraz zalogować."
+msgstr ""
+
+#: app/routes.py:111
+msgid "Link weryfikacyjny jest nieprawidłowy lub wygasł."
+msgstr ""
+
+#: app/routes.py:127
+msgid ""
+"Twoje konto nie zostało jeszcze zweryfikowane. Sprawdź swoją skrzynkę "
+"mailową."
+msgstr ""
+
+#: app/routes.py:131
+msgid "Zalogowano pomyślnie!"
+msgstr ""
+
+#: app/routes.py:134
+msgid "Logowanie nie powiodło się. Sprawdź dane i hasło."
+msgstr ""
+
+#: app/routes.py:135
+msgid "Logowanie"
+msgstr ""
+
+#: app/routes.py:150
+msgid ""
+"Jeśli konto istnieje, instrukcje resetowania hasła zostały wysłane na "
+"email."
+msgstr ""
+
+#: app/routes.py:152 app/routes.py:169
+msgid "Reset Hasła"
+msgstr ""
+
+#: app/routes.py:160
+msgid "Link do resetowania hasła jest nieprawidłowy lub wygasł."
+msgstr ""
+
+#: app/routes.py:167
+msgid "Twoje hasło zostało zaktualizowane! Możesz się teraz zalogować."
+msgstr ""
+
+#: app/routes.py:184 app/templates/base.html:64 app/templates/base.html:102
+msgid "News"
+msgstr ""
+
+#: app/routes.py:189
+msgid "Sponsorzy i Dofinansowanie"
+msgstr ""
+
+#: app/routes.py:200
+msgid "Folder ze zdjęciami galerii nie został znaleziony."
+msgstr ""
+
+#: app/routes.py:217
+msgid "Galeria"
+msgstr ""
+
+#: app/routes.py:247
+msgid "Twoja wiadomość została wysłana! Dziękujemy."
+msgstr ""
+
+#: app/routes.py:251
+msgid "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później."
+msgstr ""
+
+#: app/routes.py:253
+msgid "Kontakt"
+msgstr ""
+
+#: app/routes.py:260
+msgid "Regulamin"
+msgstr ""
+
+#: app/routes.py:285
+msgid "Twój post został opublikowany!"
+msgstr ""
+
+#: app/routes.py:287
+msgid "Nowy Post"
+msgstr ""
+
+#: app/routes.py:306
+msgid "Post został zaktualizowany!"
+msgstr ""
+
+#: app/routes.py:311
+msgid "Edytuj Post"
+msgstr ""
+
+#: app/routes.py:321
+msgid "Twój post został usunięty."
+msgstr ""
+
+#: app/routes.py:348
+msgid "Nazwę użytkownika można zmieniać tylko raz na 14 dni."
+msgstr ""
+
+#: app/routes.py:355
+msgid "Twoje dane zostały zaktualizowane!"
+msgstr ""
+
+#: app/routes.py:363
+msgid "Twoje hasło zostało zmienione!"
+msgstr ""
+
+#: app/routes.py:366
+msgid "Stare hasło jest nieprawidłowe."
+msgstr ""
+
+#: app/routes.py:374
+msgid "Profil Użytkownika"
+msgstr ""
+
+#: app/routes.py:384
+msgid "Turnieje"
+msgstr ""
+
+#: app/routes.py:406
+msgid "Nie można zapisać się na turniej, który już się rozpoczął."
+msgstr ""
+
+#: app/routes.py:410
+msgid "Lista uczestników jest już pełna!"
+msgstr ""
+
+#: app/routes.py:416
+msgid "Zostałeś pomyślnie zapisany na turniej!"
+msgstr ""
+
+#: app/routes.py:427
+msgid "Nie można wypisać się z turnieju, który już się rozpoczął."
+msgstr ""
+
+#: app/routes.py:433
+msgid "Zostałeś wypisany z turnieju."
+msgstr ""
+
+#: app/routes.py:447
+msgid "Nie znaleziono strony"
+msgstr ""
+
+#: app/routes.py:452
+msgid "Brak dostępu"
+msgstr ""
+
+#: app/routes.py:471
+msgid "Panel Administratora"
+msgstr ""
+
+#: app/routes.py:482
+msgid "Zarządzaj Użytkownikami"
+msgstr ""
+
+#: app/routes.py:493
+msgid "Nie możesz odebrać sobie uprawnień administratora."
+msgstr ""
+
+#: app/routes.py:499
+msgid "nadano"
+msgstr ""
+
+#: app/routes.py:499
+msgid "odebrano"
+msgstr ""
+
+#: app/routes.py:500
+#, python-format
+msgid ""
+"Pomyślnie %(status)s uprawnienia administratora użytkownikowi "
+"%(username)s."
+msgstr ""
+
+#: app/routes.py:513
+msgid "Nie możesz usunąć własnego konta z panelu administratora."
+msgstr ""
+
+#: app/routes.py:523
+#, python-format
+msgid "Użytkownik %(username)s i wszystkie jego posty zostały usunięte."
+msgstr ""
+
+#: app/routes.py:533
+msgid "Zarządzaj Postami"
+msgstr ""
+
+#: app/routes.py:557
+msgid "Turniej został pomyślnie utworzony!"
+msgstr ""
+
+#: app/routes.py:559
+msgid "Nowy Turniej"
+msgstr ""
+
+#: app/routes.py:570
+msgid "Zapis użytkownika został usunięty."
+msgstr ""
+
+#: app/routes.py:594
+msgid "Zarządzaj Turniejami"
+msgstr ""
+
+#: app/routes.py:613
+msgid "Turniej został zaktualizowany!"
+msgstr ""
+
+#: app/routes.py:622
+msgid "Edytuj Turniej"
+msgstr ""
+
+#: app/routes.py:633
+msgid "Turniej został usunięty."
+msgstr ""
+
+#: app/routes.py:653
+msgid "Zwycięzca został dodany!"
+msgstr ""
+
+#: app/routes.py:657
+msgid "Zarządzaj Zwycięzcami"
+msgstr ""
+
+#: app/routes.py:669
+msgid "Wpis o zwycięzcy został usunięty."
+msgstr ""
+
+#: app/templates/_pagination.html:5
+msgid "Previous"
+msgstr ""
+
+#: app/templates/_pagination.html:23
+msgid "Next"
+msgstr ""
+
+#: app/templates/base.html:63 app/templates/base.html:101
+msgid "Home"
+msgstr ""
+
+#: app/templates/base.html:65 app/templates/base.html:103
+msgid "Tournaments"
+msgstr ""
+
+#: app/templates/base.html:66 app/templates/base.html:104
+#: app/templates/base.html:159
+msgid "About Us"
+msgstr ""
+
+#: app/templates/base.html:67 app/templates/base.html:105
+#: app/templates/base.html:160
+msgid "Contact"
+msgstr ""
+
+#: app/templates/base.html:74 app/templates/base.html:118
+msgid "Admin Panel"
+msgstr ""
+
+#: app/templates/base.html:76 app/templates/base.html:120
+msgid "Logout"
+msgstr ""
+
+#: app/templates/base.html:78 app/templates/base.html:122
+msgid "Login"
+msgstr ""
+
+#: app/templates/base.html:79 app/templates/base.html:123
+msgid "Register"
+msgstr ""
+
+#: app/templates/base.html:116
+msgid "Profile"
+msgstr ""
+
+#: app/templates/base.html:161
+msgid "Privacy Policy"
+msgstr ""
+
+#: app/templates/base.html:162
+msgid "Terms of Service"
+msgstr ""
+
+#: app/templates/contact.html:8
+msgid "Contact Us"
+msgstr ""
+
+#: app/templates/contact.html:9
+msgid "Have questions? We would love to hear from you."
+msgstr ""
+
+#: app/templates/contact.html:16
+msgid "Contact Information"
+msgstr ""
+
+#: app/templates/contact.html:20
+msgid "Organization Name"
+msgstr ""
+
+#: app/templates/contact.html:24
+msgid "Address"
+msgstr ""
+
+#: app/templates/contact.html:32
+msgid "Phone"
+msgstr ""
+
+#: app/templates/contact.html:39
+msgid "Send us a message"
+msgstr ""
+
+#: app/templates/contact.html:45
+msgid "Your Name"
+msgstr ""
+
+#: app/templates/contact.html:50
+msgid "Your Email"
+msgstr ""
+
+#: app/templates/contact.html:55
+msgid "Subject"
+msgstr ""
+
+#: app/templates/contact.html:60
+msgid "Your Message"
+msgstr ""
+
+#: app/templates/admin/manage_tournaments.html:51
+#: app/templates/create_post.html:29 app/templates/post.html:45
+msgid "Cancel"
+msgstr ""
+
+#: app/templates/gallery.html:7
+msgid "Our Gallery"
+msgstr ""
+
+#: app/templates/gallery.html:8
+msgid "See photos from our events and training sessions."
+msgstr ""
+
+#: app/templates/gallery.html:40
+msgid "Gallery image"
+msgstr ""
+
+#: app/templates/gallery.html:51
+msgid "No images in the gallery yet."
+msgstr ""
+
+#: app/templates/index.html:8
+msgid "Unity Through Sport"
+msgstr ""
+
+#: app/templates/index.html:9
+msgid ""
+"Connecting India and Poland on the badminton court. Discover our story, "
+"join our events."
+msgstr ""
+
+#: app/templates/index.html:10
+msgid "Join Us"
+msgstr ""
+
+#: app/templates/index.html:18
+msgid "Latest News"
+msgstr ""
+
+#: app/templates/index.html:33 app/templates/news.html:24
+msgid "Read More"
+msgstr ""
+
+#: app/templates/index.html:38 app/templates/news.html:29
+msgid "No posts to display."
+msgstr ""
+
+#: app/templates/index.html:58
+msgid "Upcoming Tournaments"
+msgstr ""
+
+#: app/templates/index.html:71 app/templates/index.html:97
+msgid "Date"
+msgstr ""
+
+#: app/templates/index.html:71 app/templates/index.html:97
+msgid "Location"
+msgstr ""
+
+#: app/templates/index.html:74
+msgid "View & Register"
+msgstr ""
+
+#: app/templates/index.html:78
+msgid "No upcoming tournaments scheduled."
+msgstr ""
+
+#: app/templates/index.html:84
+msgid "Past Events & Winners"
+msgstr ""
+
+#: app/templates/index.html:101 app/templates/tournament_details.html:22
+msgid "Winners"
+msgstr ""
+
+#: app/templates/index.html:111
+msgid "View Results"
+msgstr ""
+
+#: app/templates/index.html:115
+msgid "No past events to show."
+msgstr ""
+
+#: app/templates/login.html:7
+msgid "Sign in to your account"
+msgstr ""
+
+#: app/templates/login.html:14
+msgid "Username or Email"
+msgstr ""
+
+#: app/templates/login.html:18 app/templates/register.html:48
+msgid "Password"
+msgstr ""
+
+#: app/templates/login.html:29
+msgid "Forgot your password?"
+msgstr ""
+
+#: app/templates/login.html:39
+msgid "Don't have an account yet?"
+msgstr ""
+
+#: app/templates/login.html:40
+msgid "Register here"
+msgstr ""
+
+#: app/templates/news.html:7
+msgid "All News"
+msgstr ""
+
+#: app/templates/news.html:8
+msgid "Browse all articles and updates from our association."
+msgstr ""
+
+#: app/templates/post.html:14
+msgid "Published by"
+msgstr ""
+
+#: app/templates/post.html:26
+msgid "Edit Post"
+msgstr ""
+
+#: app/templates/post.html:27
+msgid "Delete Post"
+msgstr ""
+
+#: app/templates/admin/manage_tournaments.html:44 app/templates/post.html:38
+msgid "Confirm Deletion"
+msgstr ""
+
+#: app/templates/post.html:42
+msgid "Are you sure you want to delete this post? This action cannot be undone."
+msgstr ""
+
+#: app/templates/admin/manage_posts.html:34
+#: app/templates/admin/manage_tournaments.html:37
+#: app/templates/admin/manage_tournaments.html:53
+#: app/templates/admin/manage_winners.html:42 app/templates/post.html:47
+msgid "Delete"
+msgstr ""
+
+#: app/templates/profile.html:24
+msgid "Update Personal Details"
+msgstr ""
+
+#: app/templates/profile.html:42
+msgid "You can change your username again in"
+msgstr ""
+
+#: app/templates/profile.html:42
+msgid "days"
+msgstr ""
+
+#: app/templates/profile.html:58
+msgid "Change Password"
+msgstr ""
+
+#: app/templates/register.html:7
+msgid "Create your account"
+msgstr ""
+
+#: app/templates/register.html:16
+msgid "First Name"
+msgstr ""
+
+#: app/templates/register.html:23
+msgid "Last Name"
+msgstr ""
+
+#: app/templates/admin/manage_users.html:13 app/templates/register.html:32
+msgid "Username"
+msgstr ""
+
+#: app/templates/email/reset_password.html:15 app/templates/register.html:40
+#: app/templates/reset_request.html:14
+msgid "Email Address"
+msgstr ""
+
+#: app/templates/register.html:56
+msgid "Confirm Password"
+msgstr ""
+
+#: app/templates/register.html:65
+msgid "Create Account"
+msgstr ""
+
+#: app/templates/register.html:70
+msgid "Already have an account?"
+msgstr ""
+
+#: app/templates/register.html:71
+msgid "Sign In"
+msgstr ""
+
+#: app/templates/email/reset_password.html:8 app/templates/reset_request.html:7
+msgid "Reset Your Password"
+msgstr ""
+
+#: app/templates/email/reset_password.html:9 app/templates/reset_request.html:8
+msgid ""
+"Enter your email address and we will send you a link to reset your "
+"password."
+msgstr ""
+
+#: app/templates/email/reset_password.html:21
+#: app/templates/reset_request.html:20
+msgid "Send Reset Link"
+msgstr ""
+
+#: app/templates/email/reset_password.html:35 app/templates/reset_token.html:7
+msgid "Set a New Password"
+msgstr ""
+
+#: app/templates/email/reset_password.html:42 app/templates/reset_token.html:14
+msgid "New Password"
+msgstr ""
+
+#: app/templates/email/reset_password.html:49 app/templates/reset_token.html:21
+msgid "Confirm New Password"
+msgstr ""
+
+#: app/templates/email/reset_password.html:56 app/templates/reset_token.html:28
+msgid "Reset Password"
+msgstr ""
+
+#: app/templates/sponsors.html:7
+msgid "Our Sponsors & Partners"
+msgstr ""
+
+#: app/templates/sponsors.html:8
+msgid ""
+"We are grateful for the support of our sponsors who help us promote "
+"badminton and connect communities."
+msgstr ""
+
+#: app/templates/tournament_details.html:14
+msgid "Data:"
+msgstr ""
+
+#: app/templates/tournament_details.html:43
+msgid "Jesteś zapisany na ten turniej."
+msgstr ""
+
+#: app/templates/tournament_details.html:45
+msgid "Wypisz się"
+msgstr ""
+
+#: app/templates/tournament_details.html:48
+msgid "Brak wolnych miejsc."
+msgstr ""
+
+#: app/templates/tournament_details.html:51
+msgid "Zapisz się"
+msgstr ""
+
+#: app/templates/tournament_details.html:55
+msgid "Rejestracja na ten turniej została zakończona."
+msgstr ""
+
+#: app/templates/tournament_details.html:60
+msgid "Zapisani gracze"
+msgstr ""
+
+#: app/templates/tournament_details.html:67
+msgid "Usuń"
+msgstr ""
+
+#: app/templates/tournament_details.html:72
+msgid "Nikt się jeszcze nie zapisał."
+msgstr ""
+
+#: app/templates/tournament_details.html:78
+msgid "Pobierz listę w JSON"
+msgstr ""
+
+#: app/templates/tournaments.html:5
+msgid "Nadchodzące Turnieje"
+msgstr ""
+
+#: app/templates/tournaments.html:15
+msgid "Zobacz szczegóły"
+msgstr ""
+
+#: app/templates/tournaments.html:19
+msgid "Brak nadchodzących turniejów."
+msgstr ""
+
+#: app/templates/admin/dashboard.html:5
+msgid "Admin Dashboard"
+msgstr ""
+
+#: app/templates/admin/dashboard.html:12
+msgid "Total Users"
+msgstr ""
+
+#: app/templates/admin/dashboard.html:13
+#: app/templates/admin/manage_users.html:4
+msgid "Manage Users"
+msgstr ""
+
+#: app/templates/admin/dashboard.html:18
+msgid "Total Posts"
+msgstr ""
+
+#: app/templates/admin/dashboard.html:19
+#: app/templates/admin/manage_posts.html:6
+msgid "Manage Posts"
+msgstr ""
+
+#: app/templates/admin/dashboard.html:24
+msgid "Total Tournaments"
+msgstr ""
+
+#: app/templates/admin/dashboard.html:25
+#: app/templates/admin/manage_tournaments.html:6
+msgid "Manage Tournaments"
+msgstr ""
+
+#: app/templates/admin/manage_posts.html:9
+msgid "Add Post"
+msgstr ""
+
+#: app/templates/admin/manage_posts.html:19
+#: app/templates/admin/manage_tournaments.html:20
+msgid "Title"
+msgstr ""
+
+#: app/templates/admin/manage_posts.html:20
+msgid "Author"
+msgstr ""
+
+#: app/templates/admin/manage_posts.html:21
+msgid "Date Published"
+msgstr ""
+
+#: app/templates/admin/manage_posts.html:32
+#: app/templates/admin/manage_tournaments.html:34
+msgid "View"
+msgstr ""
+
+#: app/templates/admin/manage_posts.html:33
+#: app/templates/admin/manage_tournaments.html:36
+msgid "Edit"
+msgstr ""
+
+#: app/templates/admin/manage_tournaments.html:9
+msgid "Add Tournament"
+msgstr ""
+
+#: app/templates/admin/manage_tournaments.html:21
+msgid "Start Date"
+msgstr ""
+
+#: app/templates/admin/manage_tournaments.html:22
+msgid "Registrations"
+msgstr ""
+
+#: app/templates/admin/manage_tournaments.html:35
+msgid "Manage Winners"
+msgstr ""
+
+#: app/templates/admin/manage_tournaments.html:48
+msgid "Are you sure you want to delete the tournament"
+msgstr ""
+
+#: app/templates/admin/manage_tournaments.html:48
+msgid "This action cannot be undone."
+msgstr ""
+
+#: app/templates/admin/manage_users.html:15
+msgid "Full Name"
+msgstr ""
+
+#: app/templates/admin/manage_users.html:16
+msgid "Status"
+msgstr ""
+
+#: app/templates/admin/manage_users.html:17
+msgid "Actions"
+msgstr ""
+
+#: app/templates/admin/manage_users.html:29
+msgid "Admin"
+msgstr ""
+
+#: app/templates/admin/manage_users.html:31
+msgid "User"
+msgstr ""
+
+#: app/templates/admin/manage_users.html:37
+msgid "Toggle Admin"
+msgstr ""
+
+#: app/templates/admin/manage_users.html:39
+msgid "Delete User"
+msgstr ""
+
+#: app/templates/admin/manage_winners.html:5
+msgid "Manage Winners for"
+msgstr ""
+
+#: app/templates/admin/manage_winners.html:6
+msgid "Back to Tournaments"
+msgstr ""
+
+#: app/templates/admin/manage_winners.html:12
+msgid "Add a Winner"
+msgstr ""
+
+#: app/templates/admin/manage_winners.html:34
+msgid "Current Winners"
+msgstr ""
+
+#: app/templates/admin/manage_winners.html:46
+msgid "No winners have been added yet."
+msgstr ""
+
+#: app/templates/errors/403.html:5
+msgid "Błąd!"
+msgstr ""
+
+#: app/templates/errors/403.html:5
+msgid "Brak uprawnień."
+msgstr ""
+
+#: app/templates/errors/403.html:7
+msgid "Nie masz uprawnień, aby uzyskać dostęp do tej strony."
+msgstr ""
+
+#: app/templates/errors/403.html:9 app/templates/errors/404.html:9
+msgid "Wróć na stronę główną"
+msgstr ""
+
+#: app/templates/errors/404.html:5
+msgid "Ups!"
+msgstr ""
+
+#: app/templates/errors/404.html:5
+msgid "Strona nie została znaleziona."
+msgstr ""
+
+#: app/templates/errors/404.html:7
+msgid ""
+"Strona, której szukasz, nie istnieje. Mogła zostać przeniesiona lub "
+"usunięta."
+msgstr ""
+
